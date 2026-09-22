@@ -1,0 +1,130 @@
+{
+  "version": "2024.1",
+  "source": "Iran National Immunization Program - Ministry of Health and Medical Education",
+  "description": "Iran's routine childhood immunization schedule. All ages in days after birth.",
+  "lastUpdated": "2024-01-01",
+  "vaccines": {
+    "bcg": {
+      "code": "bcg",
+      "farsiName": "B.C.G",
+      "description": "واکسن سل",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 0, "notes": "به محض تولد، بهتره در ۲۴ ساعت اول"}
+      ]
+    },
+    "hepatitis_b_birth": {
+      "code": "hepatitis_b_birth",
+      "farsiName": "هپاتیت B (تولد)",
+      "description": "دوز اول هپاتیت B در زمان تولد",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 0, "notes": "به محض تولد، بهتره در ۲۴ ساعت اول"}
+      ]
+    },
+    "hepatitis_b": {
+      "code": "hepatitis_b",
+      "farsiName": "هپاتیت B",
+      "description": "واکسن هپاتیت B",
+      "doses": [
+        {"doseNumber": 2, "scheduledAgeDays": 60, "notes": "دوز دوم در ۲ ماهگی"},
+        {"doseNumber": 3, "scheduledAgeDays": 180, "notes": "دوز سوم در ۶ ماهگی"}
+      ]
+    },
+    "penta": {
+      "code": "penta",
+      "farsiName": "پنتاوالنت",
+      "description": "واکسن پنج‌گانه (دیفتری، تتانوس، کلامه، هپاتیت B، هیموفیلوس اینفلوئنزا نوع b)",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 60, "notes": "دوز اول در ۲ ماهگی"},
+        {"doseNumber": 2, "scheduledAgeDays": 120, "notes": "دوز دوم در ۴ ماهگی"},
+        {"doseNumber": 3, "scheduledAgeDays": 180, "notes": "دوز سوم در ۶ ماهگی"}
+      ]
+    },
+    "opv": {
+      "code": "opv",
+      "farsiName": "OPV (پوليو دهانی)",
+      "description": "واکسن پوليو دهانی",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 60, "notes": "دوز اول در ۲ ماهگی"},
+        {"doseNumber": 2, "scheduledAgeDays": 120, "notes": "دوز دوم در ۴ ماهگی"},
+        {"doseNumber": 3, "scheduledAgeDays": 180, "notes": "دوز سوم در ۶ ماهگی"},
+        {"doseNumber": 4, "scheduledAgeDays": 365, "notes": "دوز تقویت در ۱۲ ماهگی"}
+      ]
+    },
+    "ipv": {
+      "code": "ipv",
+      "farsiName": "IPV (پوليو عضلانی)",
+      "description": "واکسن پوليو عضلانی (شستشو)",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 120, "notes": "دوز اول در ۴ ماهگی"},
+        {"doseNumber": 2, "scheduledAgeDays": 180, "notes": "دوز دوم در ۶ ماهگی"}
+      ]
+    },
+    "pneumococcal": {
+      "code": "pneumococcal",
+      "farsiName": "پنیوموکاک",
+      "description": "واکسن پنیوموکاکال همvalence",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 60, "notes": "دوز اول در ۲ ماهگی"},
+        {"doseNumber": 2, "scheduledAgeDays": 120, "notes": "دوز دوم در ۴ ماهگی"},
+        {"doseNumber": 3, "scheduledAgeDays": 365, "notes": "دوز تقویت در ۱۲ ماهگی"}
+      ]
+    },
+    "rotavirus": {
+      "code": "rotavirus",
+      "farsiName": "روتاویرس",
+      "description": "واکسن روتاویرس",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 60, "notes": "دوز اول در ۲ ماهگی (حداکثر تا ۱۴ هفته و ۶ روز)"},
+        {"doseNumber": 2, "scheduledAgeDays": 120, "notes": "دوز دوم در ۴ ماهگی (حداکثر تا ۸ ماهگی)"}
+      ]
+    },
+    "mmr": {
+      "code": "mmr",
+      "farsiName": "MMR (مازیل، روبلا، ابوعلی‌سینا)",
+      "description": "واکسه سه‌گانه مازیل، روبلا، ابوعلی‌سینا",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 365, "notes": "دوز اول در ۱۲ ماهگی"},
+        {"doseNumber": 2, "scheduledAgeDays": 540, "notes": "دوز دوم در ۱۸ ماهگی"}
+      ]
+    },
+    "varicella": {
+      "code": "varicella",
+      "farsiName": "آبله",
+      "description": "واکسن آبله (ورنسیلا)",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 365, "notes": "دوز اول در ۱۲ ماهگی"}
+      ]
+    },
+    "hepatitis_a": {
+      "code": "hepatitis_a",
+      "farsiName": "هپاتیت A",
+      "description": "واکسن هپاتیت A",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 540, "notes": "دوز اول در ۱۸ ماهگی"},
+        {"doseNumber": 2, "scheduledAgeDays": 720, "notes": "دوز دوم در ۲۴ ماهگی (۶ ماه بعد از دوز اول)"}
+      ]
+    },
+    "tdap_booster": {
+      "code": "tdap_booster",
+      "farsiName": "Tdap (تقویت دیفتری، تتانوس، کلامه)",
+      "description": "واکسن تقویت دیفتری، تتانوس، کلامه اسلیولی",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 1460, "notes": "دوز تقویت در ۴ سالگی (مدرسه)"}
+      ]
+    },
+    "influenza": {
+      "code": "influenza",
+      "farsiName": "انفولانزا (فصلانه)",
+      "description": "واکسن انفولانزا سالانه (اختیاری برای کودکان ۶ ماه تا ۵ سال)",
+      "doses": [
+        {"doseNumber": 1, "scheduledAgeDays": 180, "notes": "شروع از ۶ ماهگی، سالانه در فصل سرما"}
+      ]
+    }
+  },
+  "notes": {
+    "general": "برنامه واکسیناسیون ملی ایران - مرجع: وزارت بهداشت و درمان و آموزش پزشکی",
+    "catchUp": "اگر کودک دوزی را از دست داده، به مراجع بهداشتی مراجعه کنید برای برنامه بازیابی",
+    "premature": "برای کودکان قبل از موعد، برنامه بر اساس سن تقویمی (نه سن اصلاح شده) اجرا می‌شود",
+    "contraindications": "علائم شدید حساسیت به دوز قبلی، بیماری حاد با تب بالا، نقص ایمنی شدید"
+  }
+}

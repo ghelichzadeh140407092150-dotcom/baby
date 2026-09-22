@@ -1,0 +1,328 @@
+{
+  "version": "2024.1",
+  "source": "CDC Developmental Milestones / WHO Motor Development / Iran Ministry of Health Guidelines",
+  "description": "Developmental milestones for children 0-36 months. Ages in months.",
+  "lastUpdated": "2024-01-01",
+  "milestones": [
+    {
+      "code": "social_smile",
+      "farsiName": "لخند اجتماعی",
+      "category": "social",
+      "expectedMonthsMin": 1,
+      "expectedMonthsMax": 3,
+      "description": "لخند کردن در پاسخ به صورت مادر/پدر یا آوا"
+    },
+    {
+      "code": "tracks_objects",
+      "farsiName": "پیروی از اشیاء با چشم",
+      "category": "cognitive",
+      "expectedMonthsMin": 1,
+      "expectedMonthsMax": 3,
+      "description": "دنبال کردن اشیاء متحرک با چشم"
+    },
+    {
+      "code": "head_control",
+      "farsiName": "کنترل سر",
+      "category": "motor",
+      "expectedMonthsMin": 2,
+      "expectedMonthsMax": 4,
+      "description": "نگاه داشتن سر در حالت پرینه"
+    },
+    {
+      "code": "cooing",
+      "farsiName": "آوا کردن (cooing)",
+      "category": "language",
+      "expectedMonthsMin": 2,
+      "expectedMonthsMax": 4,
+      "description": "صداهای آ-او، گوگو"
+    },
+    {
+      "code": "reaches_objects",
+      "farsiName": "دست بردن به اشیاء",
+      "category": "motor",
+      "expectedMonthsMin": 3,
+      "expectedMonthsMax": 5,
+      "description": "تلاش برای گرفتن اشیاء با دست"
+    },
+    {
+      "code": "rollover_tummy_to_back",
+      "farsiName": "چرخش از شکم به پشت",
+      "category": "motor",
+      "expectedMonthsMin": 3,
+      "expectedMonthsMax": 6,
+      "description": "چرخش از حالت پرینه به پیینه"
+    },
+    {
+      "code": "laughs",
+      "farsiName": "ققه کردن",
+      "category": "social",
+      "expectedMonthsMin": 3,
+      "expectedMonthsMax": 6,
+      "description": "ققه کردن صریح در بازی"
+    },
+    {
+      "code": "babbling",
+      "farsiName": "بیلبولی (babbling)",
+      "category": "language",
+      "expectedMonthsMin": 4,
+      "expectedMonthsMax": 7,
+      "description": "تکرار هجاهای.ba.da.ma"
+    },
+    {
+      "code": "rollover_back_to_tummy",
+      "farsiName": "چرخش از پشت به شکم",
+      "category": "motor",
+      "expectedMonthsMin": 5,
+      "expectedMonthsMax": 7,
+      "description": "چرخش از حالت پیینه به پرینه"
+    },
+    {
+      "code": "sits_with_support",
+      "farsiName": "نشستن با پروا",
+      "category": "motor",
+      "expectedMonthsMin": 5,
+      "expectedMonthsMax": 7,
+      "description": "نشستن با پشتی یا نگه‌داشتن دست‌ها"
+    },
+    {
+      "code": "transfers_objects",
+      "farsiName": "انتقال شیء از دست به دست",
+      "category": "motor",
+      "expectedMonthsMin": 6,
+      "expectedMonthsMax": 8,
+      "description": "انتقال اسباب‌بازی از یک دست به دیگری"
+    },
+    {
+      "code": "sits_unsupported",
+      "farsiName": "نشستن بدون پروا",
+      "category": "motor",
+      "expectedMonthsMin": 6,
+      "expectedMonthsMax": 9,
+      "description": "نشستن پایدار بدون کمک"
+    },
+    {
+      "code": "responds_to_name",
+      "farsiName": "پاسخ به نام",
+      "category": "language",
+      "expectedMonthsMin": 6,
+      "expectedMonthsMax": 9,
+      "description": "برگشت دادن سر وقتی نامش صدا زده میشه"
+    },
+    {
+      "code": "crawling",
+      "farsiName": "ماحمله",
+      "category": "motor",
+      "expectedMonthsMin": 7,
+      "expectedMonthsMax": 10,
+      "description": "ماحمله روی شکم یا دستان و زانوها"
+    },
+    {
+      "code": "pincer_grasp",
+      "farsiName": "گرفتن نوک‌پنجه‌ای",
+      "category": "motor",
+      "expectedMonthsMin": 8,
+      "expectedMonthsMax": 10,
+      "description": "گرفتن اشیاء کوچک با نوک انگشت شست و اشاره"
+    },
+    {
+      "code": "pulls_to_stand",
+      "farsiName": "برخاستن با تکیه",
+      "category": "motor",
+      "expectedMonthsMin": 8,
+      "expectedMonthsMax": 11,
+      "description": "کشیدن خود به حالت ایستاده با تکیه به مبل"
+    },
+    {
+      "code": "waves_bye",
+      "farsiName": "دست هلهله برای خداحافظی",
+      "category": "social",
+      "expectedMonthsMin": 9,
+      "expectedMonthsMax": 12,
+      "description": "دست هلهله کردن برای خداحافظی"
+    },
+    {
+      "code": "first_words",
+      "farsiName": "کلمات اول",
+      "category": "language",
+      "expectedMonthsMin": 10,
+      "expectedMonthsMax": 14,
+      "description": "گفتن ۱-۲ کلمه با معنی (مamá، baba)"
+    },
+    {
+      "code": "cruising",
+      "farsiName": "قدم زدن با تکیه",
+      "category": "motor",
+      "expectedMonthsMin": 10,
+      "expectedMonthsMax": 13,
+      "description": "قدم زدن با agarrه به مبل/دیوار"
+    },
+    {
+      "code": "stands_alone",
+      "farsiName": "ایستادن بدون پروا",
+      "category": "motor",
+      "expectedMonthsMin": 11,
+      "expectedMonthsMax": 14,
+      "description": "ایستادن چند ثانیه بدون تکیه"
+    },
+    {
+      "code": "first_steps",
+      "farsiName": "اولین قدم‌های مستقل",
+      "category": "motor",
+      "expectedMonthsMin": 12,
+      "expectedMonthsMax": 16,
+      "description": "قدم زدن مستقل بدون tomber"
+    },
+    {
+      "code": "points",
+      "farsiName": "اشاره با انگشت",
+      "category": "social",
+      "expectedMonthsMin": 12,
+      "expectedMonthsMax": 16,
+      "description": "اشاره کردن به اشیاء مورد علاقه"
+    },
+    {
+      "code": "follows_simple_command",
+      "farsiName": "اجرا دستور ساده",
+      "category": "language",
+      "expectedMonthsMin": 12,
+      "expectedMonthsMax": 16,
+      "description": "فهمیدن و اجرای دستور ساده (بیا، بده، نه)"
+    },
+    {
+      "code": "scribbles",
+      "farsiName": "خط‌کشی تصادفی",
+      "category": "motor",
+      "expectedMonthsMin": 13,
+      "expectedMonthsMax": 18,
+      "description": "خط‌کشی با مداد/رنگ روی کاغذ"
+    },
+    {
+      "code": "uses_spoon",
+      "farsiName": "استفاده از قاشق",
+      "category": "self_care",
+      "expectedMonthsMin": 14,
+      "expectedMonthsMax": 18,
+      "description": "تلاش برای خوردن با قاشق (با کثیفی)"
+    },
+    {
+      "code": "walks_well",
+      "farsiName": "پیاده‌روی خوب",
+      "category": "motor",
+      "expectedMonthsMin": 15,
+      "expectedMonthsMax": 18,
+      "description": "پیاده‌روی پایدار، گام‌های مطمئن"
+    },
+    {
+      "code": "two_word_phrases",
+      "farsiName": "ترکیب دو کلمه",
+      "category": "language",
+      "expectedMonthsMin": 18,
+      "expectedMonthsMax": 24,
+      "description": "ترکیب دو کلمه (مamá بیا، baba کار)"
+    },
+    {
+      "code": "runs",
+      "farsiName": "دویدن",
+      "category": "motor",
+      "expectedMonthsMin": 18,
+      "expectedMonthsMax": 24,
+      "description": "دویدن با تعادل نسبی"
+    },
+    {
+      "code": "kicks_ball",
+      "farsiName": "شوت توپ",
+      "category": "motor",
+      "expectedMonthsMin": 18,
+      "expectedMonthsMax": 24,
+      "description": "شوت کردن توپ با پا"
+    },
+    {
+      "code": "climbs_stairs",
+      "farsiName": "صعود پله‌ها",
+      "category": "motor",
+      "expectedMonthsMin": 18,
+      "expectedMonthsMax": 24,
+      "description": "صعود پله‌ها با تکیه به دیوار/دست بزرگسال"
+    },
+    {
+      "code": "pretend_play",
+      "farsiName": "بازی نمادین",
+      "category": "cognitive",
+      "expectedMonthsMin": 18,
+      "expectedMonthsMax": 24,
+      "description": "بازی کردن به نظر خندانه (خوراک دادن به عروسک)"
+    },
+    {
+      "code": "identifies_body_parts",
+      "farsiName": "شناسایی اعضای بدن",
+      "category": "cognitive",
+      "expectedMonthsMin": 18,
+      "expectedMonthsMax": 24,
+      "description": "اشاره به چشم، گوش، بینی، پا وقتی پرسیده میشه"
+    },
+    {
+      "code": "jumps",
+      "farsiName": "پر کردن",
+      "category": "motor",
+      "expectedMonthsMin": 24,
+      "expectedMonthsMax": 30,
+      "description": "پر کردن با دو پا از روی زمین"
+    },
+    {
+      "code": "throws_ball_overhand",
+      "farsiName": "پرت کردن توپ از بالا",
+      "category": "motor",
+      "expectedMonthsMin": 24,
+      "expectedMonthsMax": 30,
+      "description": "پرت کردن توپ با دست از بالای سر"
+    },
+    {
+      "code": "speaks_sentences",
+      "farsiName": "جملات سه کلمه‌ای",
+      "category": "language",
+      "expectedMonthsMin": 24,
+      "expectedMonthsMax": 30,
+      "description": "گفتن جملات ۳-۴ کلمه‌ای ساده"
+    },
+    {
+      "code": "follows_two_step_commands",
+      "farsiName": "اجرا دستور دو مرحله‌ای",
+      "category": "language",
+      "expectedMonthsMin": 24,
+      "expectedMonthsMax": 30,
+      "description": "فهم دو مرحله (خیابون رو و کفشات رو بکن)"
+    },
+    {
+      "code": "pedals_tricycle",
+      "farsiName": "دوچرخه سه‌چرخه",
+      "category": "motor",
+      "expectedMonthsMin": 30,
+      "expectedMonthsMax": 36,
+      "description": "پدال زدن دوچرخه سه‌چرخه"
+    },
+    {
+      "code": "copies_circle",
+      "farsiName": "کپی کردن دایره",
+      "category": "motor",
+      "expectedMonthsMin": 30,
+      "expectedMonthsMax": 36,
+      "description": "کشیدن دایره تقریبی بعد از دیدن مدل"
+    },
+    {
+      "code": "knows_gender",
+      "farsiName": "دانستن جنسیت",
+      "category": "cognitive",
+      "expectedMonthsMin": 30,
+      "expectedMonthsMax": 36,
+      "description": "می‌دونه پسره یا دختره"
+    },
+    {
+      "code": "toilet_training_ready",
+      "farsiName": "آمادگی توالت",
+      "category": "self_care",
+      "expectedMonthsMin": 24,
+      "expectedMonthsMax": 36,
+      "description": "نشان دادن علائم آمادگی برای رها کردن حفاضه"
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "version": "2024.1",
+  "source": "وزارت بهداشت و درمان و آموزش پزشکی ایران - راهنمای تغذیه تکمیلی نوزادان و کودکان",
+  "description": "فهرست غذاهای مناسب برای تغذیه تکمیلی از ۶ ماهگی. همه مواد از بازار ایران.",
+  "lastUpdated": "2024-01-01",
+  "foods": [
+    {
+      "code": "rice_cereal",
+      "farsiName": "آرد برنج تقویت شده",
+      "allowedFromMonths": 6,
+      "texture": "puree",
+      "preparation": [
+        "۱ قاشق غذاخوری آرد برنج را در ۳۰-۴۰ میلی‌لیتر آب جوش، شیر مادر یا فرمولا حل کنید",
+        "روی حرارت خیلی کم ۲-۳ دقیقه بپزید تا غلیظ شود",
+        "به دمای اتاق برسانید"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "wheat_cereal",
+      "farsiName": "آرد گندم تقویت شده",
+      "allowedFromMonths": 6,
+      "texture": "puree",
+      "preparation": [
+        "مشابه آرد برنج با شیر یا آب آماده کنید",
+        "مطمئن شوید گلوتن‌دار است، برای کودکان با حساسیت گلوتن مناسب نیست"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": ["gluten"],
+      "avoidIf": ["حساسیت گلوتن", "سیلیاک"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "potato_puree",
+      "farsiName": "پوره سیب‌زمینی",
+      "allowedFromMonths": 6,
+      "texture": "puree",
+      "preparation": [
+        "سیب‌زمینی را پوست‌کنید و به تکه‌های کوچک برش دهید",
+        "در آب جوش یا بخار بپزید تا کاملاً نرم شود (۱۵-۲۰ دقیقه)",
+        "خرد کنید و با کمی آب پز، شیر مادر یا فرمولا به قوام دلخواه برسانید"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "carrot_puree",
+      "farsiName": "پوره هویج",
+      "allowedFromMonths": 6,
+      "texture": "puree",
+      "preparation": [
+        "هویج را پوست‌کنید و به حلقه‌ها برش دهید",
+        "در آب جوش یا بخار بپزید تا کاملاً نرم شود (۱۰-۱۵ دقیقه)",
+        "خرد کنید و با آب پز یا شیر به قوام پوره برسانید"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "apple_puree",
+      "farsiName": "پوره سیب",
+      "allowedFromMonths": 6,
+      "texture": "puree",
+      "preparation": [
+        "سیب را پوست‌کنید، هسته‌کنید و به تکه‌ها برش دهید",
+        "در کم آب یا بخار بپزید تا نرم شود",
+        "خرد کنید، نیازی به اضافه کردن شیر نیست"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "banana_mash",
+      "farsiName": "موز خرد شده",
+      "allowedFromMonths": 6,
+      "texture": "mashed",
+      "preparation": [
+        "موز رسیده را پوست‌کنید",
+        "با چنگال به خوبی له کنید",
+        "نیازی به پختن نیست، می‌توانید با کمی شیر رقیق‌تر کنید"
+      ],
+      "portionGuide": "نصف موز کوچک",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "pumpkin_puree",
+      "farsiName": "پوره کدو",
+      "allowedFromMonths": 6,
+      "texture": "puree",
+      "preparation": [
+        "کدو را پوست‌کنید، بذرها را خارج و به تکه‌ها برش دهید",
+        "در آب جوش یا بخار بپزید تا نرم شود",
+        "خرد کنید و با آب پز یا شیر به قوام برسانید"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "chicken_puree",
+      "farsiName": "پوره مرغ",
+      "allowedFromMonths": 7,
+      "texture": "puree",
+      "preparation": [
+        "سینه مرغ بدون پوست و استخوان را در آب بپزید تا کاملاً پخته شود",
+        "خرد کنید و با آب پز مرغ یا شیر به قوام پوره برسانید",
+        "می‌توانید با پوره سبزیجات ترکیب کنید"
+      ],
+      "portionGuide": "۱-۲ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "lentil_puree",
+      "farsiName": "پوره عدس",
+      "allowedFromMonths": 7,
+      "texture": "puree",
+      "preparation": [
+        "عدس را به مدت ۱-۲ ساعت در آب بگذارید",
+        "در آب تازه بپزید تا کاملاً نرم و خرد شده شود",
+        "می‌توانید با پوره سبزیجات ترکیب کنید"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": ["نفخ شدید (تدریجاً افزایش دهید)"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "yogurt",
+      "farsiName": "ماست یا یوغورت ساده",
+      "allowedFromMonths": 7,
+      "texture": "puree",
+      "preparation": [
+        "ماست ساده پاستوریزه، کامل چرب، بدون شکر و افزودنی",
+        "مستقیم به کودک دهید یا با پوره میوه ترکیب کنید",
+        "ماست خانگی هم عالی است اگر پاستوریزه باشد"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": ["dairy"],
+      "avoidIf": ["حساسیت پروتئین شیر گاو"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "egg_yolk",
+      "farsiName": "زرده تخم‌مرغ",
+      "allowedFromMonths": 8,
+      "texture": "mashed",
+      "preparation": [
+        "تخم‌مرغ را ۱۰-۱۲ دقیقه بپزید تا کاملاً پخته شود",
+        "زرده را جدا و با فورک خرد کنید",
+        "می‌توانید با پوره سبزیجات یا شیر ترکیب کنید",
+        "سفیدی تخم‌مرغ قبل از ۱۲ ماهگی توصیه نمی‌شود (خطر حساسیت)"
+      ],
+      "portionGuide": "نیم تا یک زرده",
+      "allergens": ["egg"],
+      "avoidIf": ["تاریخچه حساسیت تخم‌مرغ در خانواده"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "white_fish_puree",
+      "farsiName": "پوره ماهی سفید (قاج، کلم، ماهی سپید)",
+      "allowedFromMonths": 8,
+      "texture": "puree",
+      "preparation": [
+        "ماهی را بخار یا در آب بپزید تا کاملاً پخته و استخوان‌ها جدا شود",
+        "به دقت تمام استخوان‌ها را خارج کنید",
+        "خرد کنید و با آب پز یا پوره سیب‌زمینی ترکیب کنید"
+      ],
+      "portionGuide": "۱-۲ قاشق غذاخوری",
+      "allergens": ["fish"],
+      "avoidIf": ["حساسیت ماهی در خانواده"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "spinach_puree",
+      "farsiName": "پوره اسفناج",
+      "allowedFromMonths": 8,
+      "texture": "puree",
+      "preparation": [
+        "اسفناج را به خوبی بشویید",
+        "در کم آب یا بخار ۳-۵ دقیقه بپزید",
+        "خرد کنید، می‌توانید با پوره سیب‌زمینی یا کدو ترکیب کنید"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": ["سنگ کلیه (نادر در کودکان) - مشورت با پزشک"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "soft_fruit_fingers",
+      "farsiName": "کપینه میوه نرم (موز، آووکادو، هلو، خرما)",
+      "allowedFromMonths": 8,
+      "texture": "fingerFood",
+      "preparation": [
+        "میوه را به کپینه‌های دراز (نخودی) برش دهید که کودک بتواند بگیرد",
+        "باید به اندازه‌ای نرم باشد که با دندان‌های لبخندی خرد شود",
+        "تحت نظر مستقیم بزرگسالار بدهید"
+      ],
+      "portionGuide": "۳-۴ کپینه",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "soft_cooked_veg_fingers",
+      "farsiName": "سبزیجات پخته نرم (هویج، کدو، سیب‌زمینی، براکلی)",
+      "allowedFromMonths": 8,
+      "texture": "fingerFood",
+      "preparation": [
+        "سبزیجات را به کپینه‌های دراز برش دهید",
+        "در بخار یا آب بپزید تا نرم اما نه خیلی خرد شده باشند",
+        "باید بین دو انگشت راحت خرد شود"
+      ],
+      "portionGuide": "۳-۴ کپینه",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "bread_toast_fingers",
+      "farsiName": "نانون پنیر/توست کپینه‌ای",
+      "allowedFromMonths": 8,
+      "texture": "fingerFood",
+      "preparation": [
+        "نان سنگک یا بربری را کپینه کنید",
+        "می‌توانید کمی ماست، پوره آووکادو یا روغن خیار روی آن بمالید",
+        "توست سبک هم عالی است"
+      ],
+      "portionGuide": "۱-۲ کپینه",
+      "allergens": ["gluten", "wheat"],
+      "avoidIf": ["حساسیت گلوتن"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "minced_meat",
+      "farsiName": "گوشت قرمه/خرد شده (گوساله، گوسفند، مرغ)",
+      "allowedFromMonths": 9,
+      "texture": "softChunks",
+      "preparation": [
+        "گوشت را با پیاز و کمی زعفران/ترش بپزید تا کاملاً نرم شود",
+        "با گوشت‌کن یا رنده خرد کنید",
+        "با پوره سیب‌زمینی یا برنج ترکیب کنید"
+      ],
+      "portionGuide": "۱-۲ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "full_egg",
+      "farsiName": "تخم‌مرغ کامل (زرده + سفیدی)",
+      "allowedFromMonths": 12,
+      "texture": "softChunks",
+      "preparation": [
+        "تخم‌مرغ را ۱۰-۱۲ دقیقه بپزید (اُملت، نیم‌رو، خاگینه بدون روغن زیاد)",
+        "به تکه‌های کوچک برش دهید",
+        "سفیدی باید کاملاً پخته باشد"
+      ],
+      "portionGuide": "نیم تا یک تخم‌مرغ",
+      "allergens": ["egg"],
+      "avoidIf": ["تاریخچه حساسیت تخم‌مرغ"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "cheese",
+      "farsiName": "پنیر کم‌چرب/ریکوتا/موزارلا",
+      "allowedFromMonths": 10,
+      "texture": "softChunks",
+      "preparation": [
+        "پنیر کم‌چرب و پاستوریزه انتخاب کنید",
+        "به تکه‌های کوچک یا خرد شده بدهید",
+        "روی توست، در اُملت یا مستقیم"
+      ],
+      "portionGuide": "۱ قاشق غذاخوری",
+      "allergens": ["dairy"],
+      "avoidIf": ["حساسیت پروتئین شیر"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "legumes_mashed",
+      "farsiName": "حبوبات خرد شده (لوبیا، نخود، عدس، چنا)",
+      "allowedFromMonths": 9,
+      "texture": "mashed",
+      "preparation": [
+        "حبوبات را یک شب قبل در آب بگذارید",
+        "به خوبی بپزید تا کاملاً نرم شود",
+        "با فورک خرد کنید، پوست‌ها را می‌توانید جدا کنید"
+      ],
+      "portionGuide": "۲-۳ قاشق غذاخوری",
+      "allergens": [],
+      "avoidIf": ["نفخ شدید - کم‌کم شروع کنید"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    },
+    {
+      "code": "rice_pasta",
+      "farsiName": "برنج/مکارونی خرد شده با صوص سبزی/گوشت",
+      "allowedFromMonths": 9,
+      "texture": "softChunks",
+      "preparation": [
+        "برنج یا مکارونی برای کودکان را خیلی نرم بپزید",
+        "با پوره سبزیجات، گوشت خرد یا ماست ترکیب کنید",
+        "بدون نمک و ادویه‌های تند"
+      ],
+      "portionGuide": "۳-۴ قاشق غذاخوری",
+      "allergens": ["gluten"],
+      "avoidIf": ["حساسیت گلوتن"],
+      "sourceCitation": "راهنمای تغذیه تکمیلی وزارت بهداشت ایران ۱۴۰۳",
+      "isPremium": false
+    }
+  ],
+  "seasonalNotes": {
+    "spring": ["سبزیجات تازه: اسفناج، جعفری، تره، گشنیز", "میوه‌های فصل: هلو، زردآلو، توت"],
+    "summer": ["سبزیجات: کدو، بادمجان، فلفل دلمه، خیار", "میوه‌ها: هندوانه، خربزه، انگور، خرما"],
+    "autumn": ["سبزیجات: هویج، سیب‌زمینی، کدو، کلم", "میوه‌ها: سیب، پرتقال، انار، کیوی"],
+    "winter": ["سبزیجات: کلم، اسفناج، شوید، تره", "میوه‌ها: پرتقال، مالتی، آناناس، موز"]
+  }
+}

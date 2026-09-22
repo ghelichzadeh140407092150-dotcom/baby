@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "game_001",
+      "type": "game",
+      "title": "جعبه حسی",
+      "slug": "sensory-box",
+      "minAgeMonths": 6,
+      "maxAgeMonths": 24,
+      "tags": ["home", "motor", "sensory"],
+      "durationMinutes": 15,
+      "thumbnail": "assets/images/game_sensory_box.jpg",
+      "contentVersion": 1,
+      "publishedAt": "2024-01-01T00:00:00Z",
+      "isPremium": false,
+      "goal": "motor",
+      "place": "home",
+      "materials": ["جعبه کارتنی", "برش‌های پارچه", "دانه‌ها", "اسباب‌بازی کوچک"],
+      "steps": [
+        "یک جعبه کارتنی بزرگ را با برش‌های پارچه‌های مختلف بافت پر کنید",
+        "چند اسباب‌بازی کوچک یا اشیاء ایمن در میان آن‌ها پنهان کنید",
+        "کودک را دعوت کنید تا با دست‌ها در جعبه بگردد و اشیاء را پیدا کند",
+        "نام هر شیء را وقتی پیدا شد بگویید"
+      ],
+      "whatTheyLearn": "تقویت حسی‌مدارک لمسی و مهارت‌های دستی",
+      "body": "این بازی ساده به تقویت حس لمس و مهارت‌های الدقيقة کمک می‌کند. کودکان با جستجو در بافت‌های مختلف، diagnóstico حسی خود را توسعه می‌دهند."
+    },
+    {
+      "id": "game_002",
+      "type": "game",
+      "title": "سایه‌بازی",
+      "slug": "shadow-play",
+      "minAgeMonths": 12,
+      "maxAgeMonths": 36,
+      "tags": ["home", "creativity", "language"],
+      "durationMinutes": 10,
+      "thumbnail": "assets/images/game_shadow_play.jpg",
+      "contentVersion": 1,
+      "publishedAt": "2024-01-01T00:00:00Z",
+      "isPremium": false,
+      "goal": "creativity",
+      "place": "home",
+      "materials": ["چراغ قوه", "دیوار ساده", "دست‌ها"],
+      "steps": [
+        "در اتاق تاریک، چراغ قوه را به سمت دیوار روشن کنید",
+        "سایه دست‌های خود را روی دیوار شکل دهید",
+        "کودک را تشویق کنید تا سایه‌های خودش را بسازد",
+        "قصه کوتاهی با سایه‌ها بسازید"
+      ],
+      "whatTheyLearn": "توسعه تخیل و مهارت‌های زبانی",
+      "body": "سایه‌بازی کلاسیک که خیال کودک را پران می‌کند. می‌توانید حیوانات، پرندگان و اشیاء مختلف با دست بسازید."
+    },
+    {
+      "id": "story_001",
+      "type": "story",
+      "title": "قشنگ‌ترین ستاره",
+      "slug": "prettiest-star",
+      "minAgeMonths": 18,
+      "maxAgeMonths": 48,
+      "tags": ["bedtime", "calm"],
+      "durationMinutes": 5,
+      "thumbnail": "assets/images/story_star.jpg",
+      "contentVersion": 1,
+      "publishedAt": "2024-01-01T00:00:00Z",
+      "isPremium": false,
+      "audioUrl": "https://cdn.example.com/stories/prettiest_star.mp3",
+      "audioAsset": "assets/audio/story_star.mp3",
+      "durationSeconds": 300,
+      "transcript": " sangat زیبا و درخشان بود...",
+      "category": "bedtime",
+      "narrator": "فاطمه معلم",
+      "cover": "assets/images/story_star_cover.jpg"
+    },
+    {
+      "id": "story_002",
+      "type": "story",
+      "title": "کاکتوس کوچولو",
+      "slug": "little-cactus",
+      "minAgeMonths": 24,
+      "maxAgeMonths": 60,
+      "tags": ["moral", "growth"],
+      "durationMinutes": 7,
+      "thumbnail": "assets/images/story_cactus.jpg",
+      "contentVersion": 1,
+      "publishedAt": "2024-01-01T00:00:00Z",
+      "isPremium": false,
+      "audioUrl": "https://cdn.example.com/stories/little_cactus.mp3",
+      "audioAsset": "assets/audio/story_cactus.mp3",
+      "durationSeconds": 420,
+      "transcript": "یک کاکتوس کوچولو در کویر زندگی می‌کرد...",
+      "category": "moral",
+      "narrator": "فاطمه معلم",
+      "cover": "assets/images/story_cactus_cover.jpg"
+    },
+    {
+      "id": "craft_001",
+      "type": "craft",
+      "title": "کاغذ رنگی چسبانی",
+      "slug": "paper-collage",
+      "minAgeMonths": 18,
+      "maxAgeMonths": 48,
+      "tags": ["creativity", "fine_motor"],
+      "durationMinutes": 20,
+      "thumbnail": "assets/images/craft_collage.jpg",
+      "contentVersion": 1,
+      "publishedAt": "2024-01-01T00:00:00Z",
+      "isPremium": false,
+      "materials": ["کاغذهای رنگی", "چسب استیک", "کاغذ سفید", "قیچی ایمن"],
+      "steps": [
+        {
+          "text": "کاغذهای رنگی را به تکه‌های کوچک برش دهید (یا بگذارید کودک بکشد)",
+          "imageAsset": "assets/images/craft_collage_step1.jpg"
+        },
+        {
+          "text": "روی کاغذ سفید چسب استیک بمالید",
+          "imageAsset": "assets/images/craft_collage_step2.jpg"
+        },
+        {
+          "text": "تکه‌های رنگی را به دلخواه روی چسب بگذارید",
+          "imageAsset": "assets/images/craft_collage_step3.jpg"
+        }
+      ],
+      "difficulty": "easy",
+      "resultImage": "assets/images/craft_collage_result.jpg",
+      "relatedProductSku": "CRAFT-KIT-001"
+    },
+    {
+      "id": "food_001",
+      "type": "food",
+      "title": "پوره سیب‌زمینی",
+      "slug": "potato-puree",
+      "minAgeMonths": 6,
+      "maxAgeMonths": 48,
+      "tags": ["first_food", "lunch"],
+      "durationMinutes": 15,
+      "thumbnail": "assets/images/food_potato_puree.jpg",
+      "contentVersion": 1,
+      "publishedAt": "2024-01-01T00:00:00Z",
+      "isPremium": false,
+      "allowedFromMonths": 6,
+      "texture": "puree",
+      "preparation": [
+        "سیب‌زمینی را پوست‌کنید و به تکه‌های کوچک برش دهید",
+        "در آب جوش بپزید تا کاملاً نرم شود (۱۵-۲۰ دقیقه)",
+        "آب را خارج کنید و سیب‌زمینی را خرد کنید",
+        "با کمی آب پز، شیر مادر یا فرمولا به قوام دلخواه برسانید"
+      ],
+      "portionGuide": "۲-۳ قاشق",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "وزارت بهداشت ایران - راهنمای تغذیه تکمیلی ۱۴۰۳"
+    },
+    {
+      "id": "food_002",
+      "type": "food",
+      "title": "پوره هویج",
+      "slug": "carrot-puree",
+      "minAgeMonths": 6,
+      "maxAgeMonths": 48,
+      "tags": ["first_food", "vitamin_a"],
+      "durationMinutes": 15,
+      "thumbnail": "assets/images/food_carrot_puree.jpg",
+      "contentVersion": 1,
+      "publishedAt": "2024-01-01T00:00:00Z",
+      "isPremium": false,
+      "allowedFromMonths": 6,
+      "texture": "puree",
+      "preparation": [
+        "هویج را پوست‌کنید و به حلقه‌ها برش دهید",
+        "در آب جوش یا بخار بپزید تا کاملاً نرم شود",
+        "خرد کنید و با آب پز یا شیر به قوام پوره برسانید"
+      ],
+      "portionGuide": "۲-۳ قاشق",
+      "allergens": [],
+      "avoidIf": [],
+      "sourceCitation": "وزارت بهداشت ایران - راهنمای تغذیه تکمیلی ۱۴۰۳"
+    }
+  ]
+}
