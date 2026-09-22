@@ -130,7 +130,6 @@ linter:
     do_not_use_environment: true
     exhaustive_cases: true
     flutter_style_todos: true
-    implementation_imports: true
     lines_longer_than_80_chars: false
     no_leading_underscores_for_library_prefixes: true
     no_leading_underscores_for_local_identifiers: true
@@ -190,8 +189,6 @@ analyzer:
     invalid_annotation_target: ignore
     missing_return: error
     dead_code: error
-  plugins:
-    - custom_lint
 
 # Custom rule to ban hardcoded UI strings (placeholder - would need custom lint)
 # This is a conceptual rule - actual implementation would be a custom lint plugin
