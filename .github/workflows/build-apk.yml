@@ -24,12 +24,6 @@ jobs:
         with:
           persist-credentials: false
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -78,9 +72,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.27.1'
