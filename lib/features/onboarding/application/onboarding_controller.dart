@@ -2,6 +2,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hamrah_madaran/core/error/result.dart';
 import 'package:hamrah_madaran/core/di/service_locator.dart';
+import 'package:hamrah_madaran/data/dao/settings_dao.dart';
 
 import 'package:hamrah_madaran/domain/entity/child.dart';
 import 'package:hamrah_madaran/domain/repository/child_repository.dart';
