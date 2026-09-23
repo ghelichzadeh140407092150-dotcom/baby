@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
 import 'package:hamrah_madaran/core/utils/persian_utils.dart';
-import 'package:hamrah_madaran/features/onboarding/application/onboarding_controller.dart'
-    show OnboardingState;
 import 'package:hamrah_madaran/features/onboarding/domain/onboarding_state.dart'
-    show OnboardingConcern;
+    show OnboardingState, OnboardingConcern;
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 /// Screen 1: Welcome
@@ -129,6 +127,8 @@ class _ChildInfoScreenState extends ConsumerState<_ChildInfoScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = widget.theme;
+    final l10n = widget.l10n;
     return Padding(
       padding: EdgeInsets.all(theme.spacing.screenPadding),
       child: Column(
@@ -287,6 +287,7 @@ class _ChildInfoScreenState extends ConsumerState<_ChildInfoScreen> {
   Future<void> _showDatePicker(BuildContext context) async {
     final now = DateTime.now();
     final initialDate = _selectedDate ?? now;
+    final theme = widget.theme;
 
     final picked = await showDatePicker(
       context: context,
