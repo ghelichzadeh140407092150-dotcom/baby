@@ -39,7 +39,7 @@ class ChildRepositoryImpl implements ChildRepository {
         id: id,
         name: name,
         birthDate: birthDate,
-        isPreBirth: isPreBirth,
+        isPreBirth: Value(isPreBirth),
         sex: Value(sex != null ? db.ChildSex.values.byName(sex) : null),
         gestationalWeeksAtBirth: Value(gestationalWeeksAtBirth),
         avatarSeed: avatarSeed,
@@ -56,7 +56,19 @@ class ChildRepositoryImpl implements ChildRepository {
   @override
   Future<Result<Child?>> getChildById(String id) async {
     try {
-      final child = await _dao.getChildById(id);
+      final data = await _dao.getChildById(id);
+      if (data == null) return const Success(null);
+      final child = Child(
+        id: data.id,
+        name: data.name,
+        birthDate: data.birthDate,
+        isPreBirth: data.isPreBirth,
+        sex: data.sex?.name,
+        gestationalWeeksAtBirth: data.gestationalWeeksAtBirth,
+        avatarSeed: data.avatarSeed,
+        createdAt: data.createdAt,
+        updatedAt: data.updatedAt,
+      );
       return Success(child);
     } catch (e) {
       return Failure(e);
@@ -66,7 +78,18 @@ class ChildRepositoryImpl implements ChildRepository {
   @override
   Future<Result<List<Child>>> getAllChildren() async {
     try {
-      final children = await _dao.getAllChildren();
+      final childrenData = await _dao.getAllChildren();
+      final children = childrenData.map((d) => Child(
+        id: d.id,
+        name: d.name,
+        birthDate: d.birthDate,
+        isPreBirth: d.isPreBirth,
+        sex: d.sex?.name,
+        gestationalWeeksAtBirth: d.gestationalWeeksAtBirth,
+        avatarSeed: d.avatarSeed,
+        createdAt: d.createdAt,
+        updatedAt: d.updatedAt,
+      )).toList();
       return Success(children);
     } catch (e) {
       return Failure(e);
@@ -82,7 +105,7 @@ class ChildRepositoryImpl implements ChildRepository {
         name: Value(updated.name),
         birthDate: Value(updated.birthDate),
         isPreBirth: Value(updated.isPreBirth),
-        sex: Value(updated.sex),
+        sex: Value(updated.sex != null ? db.ChildSex.values.byName(updated.sex!) : null),
         gestationalWeeksAtBirth: Value(updated.gestationalWeeksAtBirth),
         avatarSeed: Value(updated.avatarSeed),
         createdAt: Value(updated.createdAt),
@@ -106,13 +129,38 @@ class ChildRepositoryImpl implements ChildRepository {
 
   @override
   Stream<Result<List<Child>>> watchAllChildren() {
-    return _dao.watchAllChildren().map((children) => Success(children))
-        .handleError((e) => Failure(e));
+    return _dao.watchAllChildren().map((childrenData) {
+      final children = childrenData.map((d) => Child(
+        id: d.id,
+        name: d.name,
+        birthDate: d.birthDate,
+        isPreBirth: d.isPreBirth,
+        sex: d.sex?.name,
+        gestationalWeeksAtBirth: d.gestationalWeeksAtBirth,
+        avatarSeed: d.avatarSeed,
+        createdAt: d.createdAt,
+        updatedAt: d.updatedAt,
+      )).toList();
+      return Success(children);
+    }).handleError((e) => Failure(e));
   }
 
   @override
   Stream<Result<Child?>> watchChild(String id) {
-    return _dao.watchChild(id).map((child) => Success(child))
-        .handleError((e) => Failure(e));
+    return _dao.watchChild(id).map((data) {
+      if (data == null) return const Success(null);
+      final child = Child(
+        id: data.id,
+        name: data.name,
+        birthDate: data.birthDate,
+        isPreBirth: data.isPreBirth,
+        sex: data.sex?.name,
+        gestationalWeeksAtBirth: data.gestationalWeeksAtBirth,
+        avatarSeed: data.avatarSeed,
+        createdAt: data.createdAt,
+        updatedAt: data.updatedAt,
+      );
+      return Success(child);
+    }).handleError((e) => Failure(e));
   }
 }
