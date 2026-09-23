@@ -6,6 +6,9 @@ import 'package:hamrah_madaran/app.dart';
 import 'package:hamrah_madaran/core/di/service_locator.dart';
 import 'package:hamrah_madaran/core/router/app_router.dart';
 import 'package:hamrah_madaran/features/today/domain/content.dart';
+import 'package:hamrah_madaran/core/theme/app_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hamrah_madaran/l10n/app_localizations.dart';
 import 'package:hamrah_madaran/features/library/presentation/library_screen.dart';
 
 void main() {
@@ -101,7 +104,7 @@ void main() {
                       context: context,
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
-                      builder: (context) => _FilterBottomSheet(
+                      builder: (context) => FilterBottomSheet(
                         theme: AppTheme.light,
                         l10n: AppLocalizations.of(context)!,
                       ),
@@ -138,7 +141,7 @@ void main() {
                       context: context,
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
-                      builder: (context) => _FilterBottomSheet(
+                      builder: (context) => FilterBottomSheet(
                         theme: AppTheme.light,
                         l10n: AppLocalizations.of(context)!,
                       ),
@@ -172,7 +175,7 @@ void main() {
         ProviderScope(
           child: MaterialApp(
             home: Scaffold(
-              body: _FilterChip(
+              body: LibraryFilterChip(
                 label: 'Test',
                 value: 'test',
                 groupValue: 'test',
@@ -192,7 +195,7 @@ void main() {
         ProviderScope(
           child: MaterialApp(
             home: Scaffold(
-              body: _FilterChip(
+              body: LibraryFilterChip(
                 label: 'Test',
                 value: 'test',
                 groupValue: 'other',

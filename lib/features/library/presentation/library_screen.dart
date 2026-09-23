@@ -9,6 +9,7 @@ import 'package:hamrah_madaran/core/utils/persian_utils.dart'
     show toPersianDigits;
 import 'package:hamrah_madaran/features/today/domain/content.dart'
     show Game, Story, Craft;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 /// Library screen with inner tabs
@@ -19,18 +20,18 @@ class LibraryScreen extends ConsumerStatefulWidget {
   ConsumerState<LibraryScreen> createState() => _LibraryScreenState();
 }
 
-class _LibraryScreenState extends ConsumerState<LibraryScreen> {
-  late final _TabController _tabController;
+class _LibraryScreenState extends ConsumerState<LibraryScreen> with SingleTickerProviderStateMixin {
+  late final TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = _TabController(vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
   }
 
   @override
   void dispose() {
-    _tabController.controller.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 
@@ -108,23 +109,23 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (context) => _FilterBottomSheet(theme: theme, l10n: l10n),
+      builder: (context) => FilterBottomSheet(theme: theme, l10n: l10n),
     );
   }
 }
 
 /// Filter bottom sheet
-class _FilterBottomSheet extends ConsumerStatefulWidget {
-  const _FilterBottomSheet({required this.theme, required this.l10n});
+class FilterBottomSheet extends ConsumerStatefulWidget {
+  const FilterBottomSheet({required this.theme, required this.l10n});
 
   final AppTheme theme;
   final AppLocalizations l10n;
 
   @override
-  ConsumerState<_FilterBottomSheet> createState() => _FilterBottomSheetState();
+  ConsumerState<FilterBottomSheet> createState() => FilterBottomSheetState();
 }
 
-class _FilterBottomSheetState extends ConsumerState<_FilterBottomSheet> {
+class FilterBottomSheetState extends ConsumerState<FilterBottomSheet> {
   int? _selectedDuration;
   String? _selectedPlace;
   String? _selectedGoal;
@@ -174,25 +175,25 @@ class _FilterBottomSheetState extends ConsumerState<_FilterBottomSheet> {
           ),
           SizedBox(height: theme.spacing.s24),
           // Duration filter
-          _FilterSection(
+          FilterSection(
             title: l10n.libraryFilterDuration,
             theme: theme,
             children: [
-              _FilterChip(
+              LibraryFilterChip(
                 label: '${toPersianDigits(10)} ${l10n.unitMinutes}-',
                 value: 10,
                 groupValue: _selectedDuration,
                 onChanged: (v) => setState(() => _selectedDuration = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: '${toPersianDigits(10)}-${toPersianDigits(20)} ${l10n.unitMinutes}',
                 value: 15,
                 groupValue: _selectedDuration,
                 onChanged: (v) => setState(() => _selectedDuration = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: '${toPersianDigits(20)}+ ${l10n.unitMinutes}',
                 value: 25,
                 groupValue: _selectedDuration,
@@ -203,32 +204,32 @@ class _FilterBottomSheetState extends ConsumerState<_FilterBottomSheet> {
           ),
           SizedBox(height: theme.spacing.s24),
           // Place filter (games only)
-          _FilterSection(
+          FilterSection(
             title: l10n.libraryFilterPlace,
             theme: theme,
             children: [
-              _FilterChip(
+              LibraryFilterChip(
                 label: l10n.gamePlaceHome,
                 value: 'home',
                 groupValue: _selectedPlace,
                 onChanged: (v) => setState(() => _selectedPlace = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: l10n.gamePlaceCar,
                 value: 'car',
                 groupValue: _selectedPlace,
                 onChanged: (v) => setState(() => _selectedPlace = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: l10n.gamePlaceOutdoor,
                 value: 'outdoor',
                 groupValue: _selectedPlace,
                 onChanged: (v) => setState(() => _selectedPlace = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: l10n.gamePlaceBath,
                 value: 'bath',
                 groupValue: _selectedPlace,
@@ -239,46 +240,46 @@ class _FilterBottomSheetState extends ConsumerState<_FilterBottomSheet> {
           ),
           SizedBox(height: theme.spacing.s24),
           // Goal filter (games only)
-          _FilterSection(
+          FilterSection(
             title: l10n.libraryFilterGoal,
             theme: theme,
             children: [
-              _FilterChip(
+              LibraryFilterChip(
                 label: 'انرژی',
                 value: 'energy',
                 groupValue: _selectedGoal,
                 onChanged: (v) => setState(() => _selectedGoal = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: 'تمرکز',
                 value: 'focus',
                 groupValue: _selectedGoal,
                 onChanged: (v) => setState(() => _selectedGoal = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: 'زبانی',
                 value: 'language',
                 groupValue: _selectedGoal,
                 onChanged: (v) => setState(() => _selectedGoal = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: 'حرکتی',
                 value: 'motor',
                 groupValue: _selectedGoal,
                 onChanged: (v) => setState(() => _selectedGoal = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: 'خلاقیت',
                 value: 'creativity',
                 groupValue: _selectedGoal,
                 onChanged: (v) => setState(() => _selectedGoal = v),
                 theme: theme,
               ),
-              _FilterChip(
+              LibraryFilterChip(
                 label: 'آرامی',
                 value: 'calm',
                 groupValue: _selectedGoal,
@@ -323,8 +324,8 @@ class _FilterBottomSheetState extends ConsumerState<_FilterBottomSheet> {
   }
 }
 
-class _FilterSection extends StatelessWidget {
-  const _FilterSection({
+class FilterSection extends StatelessWidget {
+  const FilterSection({
     required this.title,
     required this.theme,
     required this.children,
@@ -351,8 +352,8 @@ class _FilterSection extends StatelessWidget {
   }
 }
 
-class _FilterChip extends StatelessWidget {
-  const _FilterChip({
+class LibraryFilterChip extends StatelessWidget {
+  const LibraryFilterChip({
     required this.label,
     required this.value,
     required this.groupValue,

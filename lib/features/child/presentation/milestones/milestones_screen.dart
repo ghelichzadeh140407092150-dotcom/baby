@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
 import 'package:hamrah_madaran/core/theme/theme_provider.dart';
 import 'package:hamrah_madaran/core/di/service_locator.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 enum MilestoneCategory { social, cognitive, motor, language, selfCare }
@@ -30,7 +31,7 @@ class Milestone {
 class MilestonesScreen extends ConsumerWidget {
   const MilestonesScreen({super.key});
 
-  static const List<Milestone> allMilestones = [
+  static final List<Milestone> allMilestones = [
     Milestone(
       code: 'social_smile',
       farsiName: 'لخند اجتماعی',

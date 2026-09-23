@@ -8,6 +8,7 @@ import 'package:hamrah_madaran/core/theme/app_theme.dart';
 import 'package:hamrah_madaran/core/theme/theme_provider.dart';
 import 'package:hamrah_madaran/core/utils/persian_utils.dart';
 import 'package:hamrah_madaran/features/today/domain/content.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 /// Story player screen with background playback support

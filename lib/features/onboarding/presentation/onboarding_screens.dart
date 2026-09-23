@@ -5,6 +5,7 @@ import 'package:hamrah_madaran/core/theme/app_theme.dart';
 import 'package:hamrah_madaran/core/utils/persian_utils.dart';
 import 'package:hamrah_madaran/features/onboarding/domain/onboarding_state.dart'
     show OnboardingState, OnboardingConcern;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 /// Screen 1: Welcome

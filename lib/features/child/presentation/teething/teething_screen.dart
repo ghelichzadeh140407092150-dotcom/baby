@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
 import 'package:hamrah_madaran/core/theme/theme_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 enum ToothStatus { healthy, emerging, erupted, problematic, missing }
@@ -27,7 +28,7 @@ class FdiTooth {
 class TeethingScreen extends ConsumerWidget {
   const TeethingScreen({super.key});
 
-  static const List<FdiTooth> allTeeth = [
+  static final List<FdiTooth> allTeeth = [
     // Upper right (quadrant 1)
     FdiTooth(quadrant: 1, tooth: 1, fdiNumber: '11', persianName: 'اولى القص', englishName: 'Upper Right Incisor'),
     FdiTooth(quadrant: 1, tooth: 2, fdiNumber: '12', persianName: 'نیمه القص', englishName: 'Upper Right Lateral Incisor'),

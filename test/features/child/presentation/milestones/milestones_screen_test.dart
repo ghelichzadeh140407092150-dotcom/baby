@@ -62,7 +62,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Should show milestone cards
-      expect(find.byType(_MilestoneCard), findsWidgets);
+      expect(find.byType(Card), findsWidgets);
     });
   });
 }
