@@ -7,6 +7,7 @@ import 'package:hamrah_madaran/core/theme/theme_provider.dart';
 import 'package:hamrah_madaran/core/utils/persian_utils.dart';
 import 'package:hamrah_madaran/features/onboarding/application/onboarding_controller.dart';
 import 'package:hamrah_madaran/features/onboarding/domain/onboarding_state.dart';
+import 'package:hamrah_madaran/features/onboarding/presentation/onboarding_screens.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 /// Main onboarding page with PageView for step navigation
@@ -44,12 +45,12 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
     }
 
     final screens = [
-      _WelcomeScreen(
+      WelcomeScreen(
         onStart: () => _goToStep(1),
         theme: theme,
         l10n: l10n,
       ),
-      _ChildInfoScreen(
+      ChildInfoScreen(
         nameController: _nameController,
         onDateSelected: (date, isPreBirth, weeks) =>
             ref.read(onboardingControllerProvider.notifier).setBirthDate(date, isPreBirth: isPreBirth, gestationalWeeks: weeks),
@@ -60,7 +61,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
         l10n: l10n,
         state: state,
       ),
-      _ConcernsScreen(
+      ConcernsScreen(
         onConcernToggle: (code) => ref.read(onboardingControllerProvider.notifier).toggleConcern(code),
         onNext: () => _goToStep(3),
         onSkip: () => _goToStep(3),
@@ -68,7 +69,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
         l10n: l10n,
         state: state,
       ),
-      _NotificationsScreen(
+      NotificationsScreen(
         onAllowed: (allowed) => ref.read(onboardingControllerProvider.notifier).setNotificationsAllowed(allowed),
         onFinish: () => _finishOnboarding(),
         onSkip: () => _finishOnboarding(),

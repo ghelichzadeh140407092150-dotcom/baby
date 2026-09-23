@@ -56,7 +56,18 @@ class VaccineRepositoryImpl implements VaccineRepository {
   Future<Result<List<VaccineDose>>> getSchedule(String childId) async {
     try {
       final doses = await _vaccineDao.getDosesForChild(childId);
-      return Success(doses);
+      return Success(doses.map((d) => VaccineDose(
+        id: d.id,
+        childId: d.childId,
+        vaccineCode: d.vaccineCode,
+        doseNumber: d.doseNumber,
+        scheduledAgeDays: d.scheduledAgeDays,
+        dueDate: d.dueDate,
+        administeredAt: d.administeredAt,
+        skipped: d.skipped,
+        note: d.note,
+        createdAt: d.createdAt,
+      )).toList());
     } catch (e) {
       return Failure(e);
     }
@@ -66,7 +77,19 @@ class VaccineRepositoryImpl implements VaccineRepository {
   Future<Result<Map<String, List<VaccineDose>>>> getScheduleGrouped(String childId) async {
     try {
       final grouped = await _vaccineDao.getDosesGroupedByStatus(childId);
-      return Success(grouped);
+      final mapped = grouped.map((k, v) => MapEntry(k, v.map((d) => VaccineDose(
+        id: d.id,
+        childId: d.childId,
+        vaccineCode: d.vaccineCode,
+        doseNumber: d.doseNumber,
+        scheduledAgeDays: d.scheduledAgeDays,
+        dueDate: d.dueDate,
+        administeredAt: d.administeredAt,
+        skipped: d.skipped,
+        note: d.note,
+        createdAt: d.createdAt,
+      )).toList()));
+      return Success(mapped);
     } catch (e) {
       return Failure(e);
     }
@@ -78,7 +101,19 @@ class VaccineRepositoryImpl implements VaccineRepository {
       await _vaccineDao.markAdministered(doseId, administeredAt);
       final dose = await _vaccineDao.getDoseById(doseId);
       if (dose == null) return Failure(Exception('Dose not found'));
-      return Success(dose);
+      final domainDose = VaccineDose(
+        id: dose.id,
+        childId: dose.childId,
+        vaccineCode: dose.vaccineCode,
+        doseNumber: dose.doseNumber,
+        scheduledAgeDays: dose.scheduledAgeDays,
+        dueDate: dose.dueDate,
+        administeredAt: dose.administeredAt,
+        skipped: dose.skipped,
+        note: dose.note,
+        createdAt: dose.createdAt,
+      );
+      return Success(domainDose);
     } catch (e) {
       return Failure(e);
     }
@@ -90,7 +125,19 @@ class VaccineRepositoryImpl implements VaccineRepository {
       await _vaccineDao.markSkipped(doseId, note: note);
       final dose = await _vaccineDao.getDoseById(doseId);
       if (dose == null) return Failure(Exception('Dose not found'));
-      return Success(dose);
+      final domainDose = VaccineDose(
+        id: dose.id,
+        childId: dose.childId,
+        vaccineCode: dose.vaccineCode,
+        doseNumber: dose.doseNumber,
+        scheduledAgeDays: dose.scheduledAgeDays,
+        dueDate: dose.dueDate,
+        administeredAt: dose.administeredAt,
+        skipped: dose.skipped,
+        note: dose.note,
+        createdAt: dose.createdAt,
+      );
+      return Success(domainDose);
     } catch (e) {
       return Failure(e);
     }
@@ -102,7 +149,19 @@ class VaccineRepositoryImpl implements VaccineRepository {
       await _vaccineDao.updateNote(doseId, note);
       final dose = await _vaccineDao.getDoseById(doseId);
       if (dose == null) return Failure(Exception('Dose not found'));
-      return Success(dose);
+      final domainDose = VaccineDose(
+        id: dose.id,
+        childId: dose.childId,
+        vaccineCode: dose.vaccineCode,
+        doseNumber: dose.doseNumber,
+        scheduledAgeDays: dose.scheduledAgeDays,
+        dueDate: dose.dueDate,
+        administeredAt: dose.administeredAt,
+        skipped: dose.skipped,
+        note: dose.note,
+        createdAt: dose.createdAt,
+      );
+      return Success(domainDose);
     } catch (e) {
       return Failure(e);
     }
@@ -110,7 +169,18 @@ class VaccineRepositoryImpl implements VaccineRepository {
 
   @override
   Stream<Result<List<VaccineDose>>> watchSchedule(String childId) {
-    return _vaccineDao.watchDosesForChild(childId).map((doses) => Success(doses))
+    return _vaccineDao.watchDosesForChild(childId).map<Result<List<VaccineDose>>>((doses) => Success(doses.map((d) => VaccineDose(
+          id: d.id,
+          childId: d.childId,
+          vaccineCode: d.vaccineCode,
+          doseNumber: d.doseNumber,
+          scheduledAgeDays: d.scheduledAgeDays,
+          dueDate: d.dueDate,
+          administeredAt: d.administeredAt,
+          skipped: d.skipped,
+          note: d.note,
+          createdAt: d.createdAt,
+        )).toList()))
         .handleError((e) => Failure(e));
   }
 

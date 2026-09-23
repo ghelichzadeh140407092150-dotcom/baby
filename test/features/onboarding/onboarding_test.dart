@@ -7,6 +7,7 @@ import 'package:hamrah_madaran/app.dart';
 import 'package:hamrah_madaran/core/di/service_locator.dart';
 import 'package:hamrah_madaran/core/router/app_router.dart';
 import 'package:hamrah_madaran/data/dao/settings_dao.dart';
+import 'package:hamrah_madaran/features/onboarding/domain/onboarding_state.dart';
 import 'package:hamrah_madaran/features/onboarding/presentation/onboarding_page.dart';
 
 void main() {

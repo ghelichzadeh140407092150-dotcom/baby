@@ -9,8 +9,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 /// Screen 1: Welcome
-class _WelcomeScreen extends StatelessWidget {
-  const _WelcomeScreen({
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({
     required this.onStart,
     required this.theme,
     required this.l10n,
@@ -82,8 +82,8 @@ class _WelcomeScreen extends StatelessWidget {
 }
 
 /// Screen 2: Child name & birth date
-class _ChildInfoScreen extends ConsumerStatefulWidget {
-  const _ChildInfoScreen({
+class ChildInfoScreen extends ConsumerStatefulWidget {
+  const ChildInfoScreen({
     required this.nameController,
     required this.onDateSelected,
     required this.onNameChanged,
@@ -104,10 +104,10 @@ class _ChildInfoScreen extends ConsumerStatefulWidget {
   final OnboardingState state;
 
   @override
-  ConsumerState<_ChildInfoScreen> createState() => _ChildInfoScreenState();
+  ConsumerState<ChildInfoScreen> createState() => ChildInfoScreenState();
 }
 
-class _ChildInfoScreenState extends ConsumerState<_ChildInfoScreen> {
+class ChildInfoScreenState extends ConsumerState<ChildInfoScreen> {
   bool _isPreBirth = false;
   int? _gestationalWeeks;
   DateTime? _selectedDate;
@@ -318,8 +318,8 @@ class _ChildInfoScreenState extends ConsumerState<_ChildInfoScreen> {
 }
 
 /// Screen 3: Concerns (optional)
-class _ConcernsScreen extends StatelessWidget {
-  const _ConcernsScreen({
+class ConcernsScreen extends StatelessWidget {
+  const ConcernsScreen({
     required this.onConcernToggle,
     required this.onNext,
     required this.onSkip,
@@ -427,8 +427,8 @@ class _ConcernsScreen extends StatelessWidget {
 }
 
 /// Screen 4: Notifications (optional)
-class _NotificationsScreen extends StatelessWidget {
-  const _NotificationsScreen({
+class NotificationsScreen extends StatelessWidget {
+  const NotificationsScreen({
     required this.onAllowed,
     required this.onFinish,
     required this.onSkip,

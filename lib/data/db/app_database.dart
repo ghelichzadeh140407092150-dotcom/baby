@@ -38,7 +38,7 @@ class GrowthEntries extends Table {
   RealColumn get weightKg => real().nullable()();
   RealColumn get headCircumferenceCm => real().nullable()();
   TextColumn get note => text().nullable()();
-  TextColumn get source => textEnum<MeasurementSource>().withDefault(const Constant(MeasurementSource.manual))();
+  TextColumn get source => text().withDefault(const Constant('manual'))();
   DateTimeColumn get createdAt => dateTime()();
 
   @override

@@ -122,7 +122,7 @@ class OnboardingController extends StateNotifier<OnboardingState> {
       );
 
       if (childResult.isFailure) {
-        return Failure(childResult.error.error);
+        return Failure(childResult.error);
       }
 
       // Generate vaccine schedule
@@ -133,7 +133,7 @@ class OnboardingController extends StateNotifier<OnboardingState> {
         );
         if (vaccineResult.isFailure) {
           // Don't fail onboarding if vaccine schedule fails
-          print('Warning: Failed to generate vaccine schedule: ${vaccineResult.error.error}');
+          print('Warning: Failed to generate vaccine schedule: ${vaccineResult.error}');
         }
       }
 

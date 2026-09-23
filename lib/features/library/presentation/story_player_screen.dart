@@ -49,8 +49,8 @@ class _StoryPlayerScreenState extends ConsumerState<StoryPlayerScreen> {
       if (mounted) {
         setState(() {
           _isPlaying = state.playing;
-          _position = state.position;
-          _duration = state.duration ?? Duration.zero;
+          _position = _audioPlayer.position;
+          _duration = _audioPlayer.duration ?? Duration.zero;
         });
       }
     });
@@ -285,7 +285,7 @@ class _StoryPlayerScreenState extends ConsumerState<StoryPlayerScreen> {
                     ),
                     _ControlButton(
                       icon: Icons.timer_outlined,
-                      label: l10n.storySleepTimer,
+                      label: l10n.storySleepTimer(5),
                       onTap: _showSleepTimerDialog,
                       theme: theme,
                     ),

@@ -9,6 +9,7 @@ import 'package:hamrah_madaran/features/today/domain/content.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
+import 'package:hamrah_madaran/features/library/domain/library_repository.dart';
 import 'package:hamrah_madaran/features/library/presentation/library_screen.dart';
 
 void main() {

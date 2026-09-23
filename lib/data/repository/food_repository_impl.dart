@@ -87,7 +87,15 @@ class FoodRepositoryImpl implements FoodRepository {
       await _dao.updateReaction(childId, foodCode, foodReaction, note: note);
       final food = await _dao.getFoodIntroduction(childId, foodCode);
       if (food == null) return Failure(Exception('Food introduction not found'));
-      return Success(food);
+      final domainFood = FoodIntroduction(
+        id: food.id,
+        childId: food.childId,
+        foodCode: food.foodCode,
+        firstTriedAt: food.firstTriedAt,
+        reaction: food.reaction?.name,
+        note: food.note,
+      );
+      return Success(domainFood);
     } catch (e) {
       return Failure(e);
     }

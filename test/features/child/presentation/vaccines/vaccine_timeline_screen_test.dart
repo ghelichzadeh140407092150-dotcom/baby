@@ -62,7 +62,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Test that the screen builds correctly
-      expect(find.byIcon(Icons.local_pharmacy_outline), findsOneWidget);
+      expect(find.byIcon(Icons.local_pharmacy), findsOneWidget);
     });
   });
 }
