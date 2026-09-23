@@ -61,39 +61,39 @@ final dioProvider = Provider<Dio>((ref) {
 
 /// DAO providers
 final childDaoProvider = Provider<ChildDao>((ref) {
-  return ref.watch(appDatabaseProvider).childDao;
+  return ChildDao(ref.watch(appDatabaseProvider));
 });
 
 final growthDaoProvider = Provider<GrowthDao>((ref) {
-  return ref.watch(appDatabaseProvider).growthDao;
+  return GrowthDao(ref.watch(appDatabaseProvider));
 });
 
 final vaccineDaoProvider = Provider<VaccineDao>((ref) {
-  return ref.watch(appDatabaseProvider).vaccineDao;
+  return VaccineDao(ref.watch(appDatabaseProvider));
 });
 
 final teethDaoProvider = Provider<TeethDao>((ref) {
-  return ref.watch(appDatabaseProvider).teethDao;
+  return TeethDao(ref.watch(appDatabaseProvider));
 });
 
 final milestoneDaoProvider = Provider<MilestoneDao>((ref) {
-  return ref.watch(appDatabaseProvider).milestoneDao;
+  return MilestoneDao(ref.watch(appDatabaseProvider));
 });
 
 final foodDaoProvider = Provider<FoodDao>((ref) {
-  return ref.watch(appDatabaseProvider).foodDao;
+  return FoodDao(ref.watch(appDatabaseProvider));
 });
 
 final activityDaoProvider = Provider<ActivityDao>((ref) {
-  return ref.watch(appDatabaseProvider).activityDao;
+  return ActivityDao(ref.watch(appDatabaseProvider));
 });
 
 final sleepFeedDaoProvider = Provider<SleepFeedDao>((ref) {
-  return ref.watch(appDatabaseProvider).sleepFeedDao;
+  return SleepFeedDao(ref.watch(appDatabaseProvider));
 });
 
 final settingsDaoProvider = Provider<SettingsDao>((ref) {
-  return ref.watch(appDatabaseProvider).settingsDao;
+  return SettingsDao(ref.watch(appDatabaseProvider));
 });
 
 /// Repository providers

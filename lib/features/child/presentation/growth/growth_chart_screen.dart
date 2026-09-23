@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
+import 'package:hamrah_madaran/core/theme/theme_provider.dart';
 import 'package:hamrah_madaran/core/utils/persian_utils.dart';
-import 'package:hamrah_madaran/features/child/data/growth/growth_repository_impl.dart';
 import 'package:hamrah_madaran/features/child/domain/growth/growth_calculator.dart';
+import 'package:hamrah_madaran/core/di/service_locator.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 class GrowthChartScreen extends ConsumerWidget {

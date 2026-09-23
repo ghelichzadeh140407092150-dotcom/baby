@@ -2,6 +2,8 @@
 import 'package:drift/drift.dart';
 import '../db/app_database.dart';
 
+part 'vaccine_dao.g.dart';
+
 @DriftAccessor(tables: [VaccineDoses])
 class VaccineDao extends DatabaseAccessor<AppDatabase> with _$VaccineDaoMixin {
   VaccineDao(super.db);

@@ -61,6 +61,10 @@ class DevGalleryScreen extends ConsumerWidget {
     );
   }
 
+  Widget _persianUtilsDemo(BuildContext context, AppTheme theme) {
+    return _RtlTestDemo(theme: theme);
+  }
+
   Widget _sectionTitle(BuildContext context, AppTheme theme, String title) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),

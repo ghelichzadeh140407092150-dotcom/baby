@@ -2,6 +2,8 @@
 import 'package:drift/drift.dart';
 import '../db/app_database.dart';
 
+part 'teeth_dao.g.dart';
+
 @DriftAccessor(tables: [Teeth])
 class TeethDao extends DatabaseAccessor<AppDatabase> with _$TeethDaoMixin {
   TeethDao(super.db);

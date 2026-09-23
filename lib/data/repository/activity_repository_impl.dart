@@ -1,5 +1,7 @@
 // data/repository/activity_repository_impl.dart
+import 'package:drift/drift.dart';
 import 'package:hamrah_madaran/core/error/result.dart';
+import 'package:hamrah_madaran/data/db/app_database.dart';
 import 'package:hamrah_madaran/data/dao/activity_dao.dart';
 import 'package:hamrah_madaran/domain/entity/activity.dart';
 import 'package:hamrah_madaran/domain/repository/activity_repository.dart';

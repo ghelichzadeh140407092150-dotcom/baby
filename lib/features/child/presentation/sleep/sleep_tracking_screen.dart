@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
+import 'package:hamrah_madaran/core/theme/theme_provider.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 
 class SleepTrackingScreen extends ConsumerWidget {
@@ -40,7 +41,7 @@ class SleepTrackingScreen extends ConsumerWidget {
               ElevatedButton.icon(
                 onPressed: () {},
                 icon: Icon(Icons.remove),
-                label: Text(l10nrecordSleep),
+                label: Text(l10n.recordSleep),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: theme.colors.primary,
                   foregroundColor: Colors.white,

@@ -1,6 +1,15 @@
 // data/db/app_database.dart
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
+import '../dao/child_dao.dart';
+import '../dao/growth_dao.dart';
+import '../dao/vaccine_dao.dart';
+import '../dao/teeth_dao.dart';
+import '../dao/milestone_dao.dart';
+import '../dao/food_dao.dart';
+import '../dao/activity_dao.dart';
+import '../dao/sleep_feed_dao.dart';
+import '../dao/settings_dao.dart';
 
 part 'app_database.g.dart';
 

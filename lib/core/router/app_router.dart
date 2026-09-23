@@ -15,6 +15,7 @@ import '../../features/child/presentation/vaccines/vaccine_timeline_screen.dart'
 import '../../features/child/presentation/teething/teething_screen.dart';
 import '../../features/child/presentation/milestones/milestones_screen.dart';
 import '../../data/dao/settings_dao.dart';
+import '../../core/di/service_locator.dart';
 
 /// GoRouter provider
 final appRouterProvider = Provider<GoRouter>((ref) {

@@ -2,6 +2,8 @@
 import 'package:drift/drift.dart';
 import '../db/app_database.dart';
 
+part 'food_dao.g.dart';
+
 @DriftAccessor(tables: [FoodIntroductions])
 class FoodDao extends DatabaseAccessor<AppDatabase> with _$FoodDaoMixin {
   FoodDao(super.db);

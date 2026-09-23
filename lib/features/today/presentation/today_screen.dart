@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
 import 'package:hamrah_madaran/core/utils/persian_utils.dart';
 import 'package:hamrah_madaran/features/today/application/today_controller.dart';
-import 'package:hamrah_madaran/features/today/presentation/content_card.dart';
 import 'package:hamrah_madaran/features/today/presentation/reminder_strip.dart';
 import 'package:hamrah_madaran/l10n/app_localizations.dart';
 

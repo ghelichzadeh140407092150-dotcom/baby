@@ -2,6 +2,8 @@
 import 'package:drift/drift.dart';
 import '../db/app_database.dart';
 
+part 'growth_dao.g.dart';
+
 @DriftAccessor(tables: [GrowthEntries])
 class GrowthDao extends DatabaseAccessor<AppDatabase> with _$GrowthDaoMixin {
   GrowthDao(super.db);

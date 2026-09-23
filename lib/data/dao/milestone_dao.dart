@@ -2,6 +2,8 @@
 import 'package:drift/drift.dart';
 import '../db/app_database.dart';
 
+part 'milestone_dao.g.dart';
+
 @DriftAccessor(tables: [Milestones])
 class MilestoneDao extends DatabaseAccessor<AppDatabase> with _$MilestoneDaoMixin {
   MilestoneDao(super.db);

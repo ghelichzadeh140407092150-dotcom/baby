@@ -29,7 +29,7 @@ class DailyPickAlgorithm {
     required List<T> eligibleItems,
     required String seed,
     required List<String> recentIds,
-    String Function(T) getId,
+    required String Function(T) getId,
     int maxHistory = 10,
   }) {
     if (eligibleItems.isEmpty) return null;

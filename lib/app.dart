@@ -220,7 +220,7 @@ class HamrahMadaranApp extends ConsumerWidget {
     );
   }
 
-  TextTheme _buildTextTheme(_AppTextStyles styles) {
+  TextTheme _buildTextTheme(AppTextStyles styles) {
     return TextTheme(
       displayLarge: styles.display,
       displayMedium: styles.h1,

@@ -1,5 +1,6 @@
 // core/theme/app_theme.dart
 import 'package:flutter/material.dart';
+import 'dart:ui' show lerpDouble;
 import 'app_colors.dart';
 
 /// Theme extension containing all design tokens from DESIGN.md
@@ -15,7 +16,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
 
   final bool isDark;
   final _AppColorTokens colors;
-  final _AppTextStyles textStyles;
+  final AppTextStyles textStyles;
   final _AppSpacing spacing;
   final _AppRadius radius;
   final _AppShadows shadows;
@@ -24,7 +25,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   static const AppTheme light = AppTheme(
     isDark: false,
     colors: _AppColorTokens._light(),
-    textStyles: _AppTextStyles._light(),
+    textStyles: AppTextStyles._light(),
     spacing: _AppSpacing._(),
     radius: _AppRadius._(),
     shadows: _AppShadows._light(),
@@ -34,7 +35,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   static const AppTheme dark = AppTheme(
     isDark: true,
     colors: _AppColorTokens._dark(),
-    textStyles: _AppTextStyles._dark(),
+    textStyles: AppTextStyles._dark(),
     spacing: _AppSpacing._(),
     radius: _AppRadius._(),
     shadows: _AppShadows._dark(),
@@ -65,7 +66,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     return copyWith(
       isDark: t > 0.5 ? other.isDark : isDark,
       colors: _AppColorTokens._lerp(colors, other.colors, t),
-      textStyles: _AppTextStyles._lerp(textStyles, other.textStyles, t),
+      textStyles: AppTextStyles._lerp(textStyles, other.textStyles, t),
     );
   }
 }
@@ -161,8 +162,8 @@ class _AppColorTokens {
 }
 
 /// Text styles using Vazirmatn font
-class _AppTextStyles {
-  const _AppTextStyles._({
+class AppTextStyles {
+  const AppTextStyles._({
     required this.display,
     required this.h1,
     required this.h2,
@@ -182,7 +183,7 @@ class _AppTextStyles {
   final TextStyle caption;
   final TextStyle tiny;
 
-  const _AppTextStyles._light()
+  const AppTextStyles._light()
       : display = const TextStyle(
           fontFamily: 'Vazirmatn',
           fontSize: 34,
@@ -248,7 +249,7 @@ class _AppTextStyles {
           letterSpacing: 0,
         );
 
-  const _AppTextStyles._dark()
+  const AppTextStyles._dark()
       : display = const TextStyle(
           fontFamily: 'Vazirmatn',
           fontSize: 34,
@@ -314,9 +315,9 @@ class _AppTextStyles {
           letterSpacing: 0,
         );
 
-  static _AppTextStyles _lerp(
-    _AppTextStyles a,
-    _AppTextStyles b,
+  static AppTextStyles _lerp(
+    AppTextStyles a,
+    AppTextStyles b,
     double t,
   ) {
     TextStyle lerpStyle(TextStyle a, TextStyle b) {
@@ -330,7 +331,7 @@ class _AppTextStyles {
       );
     }
 
-    return _AppTextStyles._(
+    return AppTextStyles._(
       display: lerpStyle(a.display, b.display),
       h1: lerpStyle(a.h1, b.h1),
       h2: lerpStyle(a.h2, b.h2),
@@ -350,26 +351,17 @@ class _AppSpacing {
   static const _AppSpacing _instance = _AppSpacing._();
 
   // Only these values allowed
-  static const double s4 = 4;
-  static const double s8 = 8;
-  static const double s12 = 12;
-  static const double s16 = 16;
-  static const double s20 = 20;
-  static const double s24 = 24;
-  static const double s32 = 32;
-  static const double s40 = 40;
-  static const double s56 = 56;
-
-  // Instance getters for spacing constants
-  double get s4 => _AppSpacing.s4;
-  double get s8 => _AppSpacing.s8;
-  double get s12 => _AppSpacing.s12;
-  double get s16 => _AppSpacing.s16;
-  double get s20 => _AppSpacing.s20;
-  double get s24 => _AppSpacing.s24;
-  double get s32 => _AppSpacing.s32;
-  double get s40 => _AppSpacing.s40;
-  double get s56 => _AppSpacing.s56;
+  double get s4 => 4.0;
+  double get s6 => 6.0;
+  double get s8 => 8.0;
+  double get s10 => 10.0;
+  double get s12 => 12.0;
+  double get s16 => 16.0;
+  double get s20 => 20.0;
+  double get s24 => 24.0;
+  double get s32 => 32.0;
+  double get s40 => 40.0;
+  double get s56 => 56.0;
 
   // Semantic spacing
   double get screenPadding => s20;
@@ -384,11 +376,11 @@ class _AppRadius {
 
   static const _AppRadius _instance = _AppRadius._();
 
-  static const double chip = 999; // pill
-  static const double button = 16;
-  static const double card = 24;
-  static const double sheet = 28; // top only
-  static const double image = 20;
+  double get chip => 999.0; // pill
+  double get button => 16.0;
+  double get card => 24.0;
+  double get sheet => 28.0; // top only
+  double get image => 20.0;
 }
 
 /// Shadows
@@ -462,7 +454,7 @@ extension AppThemeExtension on BuildContext {
   
   _AppColorTokens get appColors => appTheme.colors;
   
-  _AppTextStyles get appTextStyles => appTheme.textStyles;
+  AppTextStyles get appTextStyles => appTheme.textStyles;
   
   _AppSpacing get appSpacing => appTheme.spacing;
   

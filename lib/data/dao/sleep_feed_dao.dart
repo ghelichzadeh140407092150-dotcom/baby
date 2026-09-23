@@ -2,6 +2,8 @@
 import 'package:drift/drift.dart';
 import '../db/app_database.dart';
 
+part 'sleep_feed_dao.g.dart';
+
 @DriftAccessor(tables: [SleepFeedLog])
 class SleepFeedDao extends DatabaseAccessor<AppDatabase> with _$SleepFeedDaoMixin {
   SleepFeedDao(super.db);

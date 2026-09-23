@@ -2,6 +2,8 @@
 import 'package:drift/drift.dart';
 import '../db/app_database.dart';
 
+part 'activity_dao.g.dart';
+
 @DriftAccessor(tables: [ActivityLog])
 class ActivityDao extends DatabaseAccessor<AppDatabase> with _$ActivityDaoMixin {
   ActivityDao(super.db);

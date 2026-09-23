@@ -2,6 +2,8 @@
 import 'package:drift/drift.dart';
 import '../db/app_database.dart';
 
+part 'child_dao.g.dart';
+
 @DriftAccessor(tables: [Children])
 class ChildDao extends DatabaseAccessor<AppDatabase> with _$ChildDaoMixin {
   ChildDao(super.db);

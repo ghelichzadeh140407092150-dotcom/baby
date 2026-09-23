@@ -1,9 +1,8 @@
 // features/onboarding/application/onboarding_controller.dart
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hamrah_madaran/core/error/result.dart';
-import 'package:hamrah_madaran/data/repository/child_repository_impl.dart';
-import 'package:hamrah_madaran/data/repository/vaccine_repository_impl.dart';
-import 'package:hamrah_madaran/data/dao/settings_dao.dart';
+import 'package:hamrah_madaran/core/di/service_locator.dart';
+
 import 'package:hamrah_madaran/domain/entity/child.dart';
 import 'package:hamrah_madaran/domain/repository/child_repository.dart';
 import 'package:hamrah_madaran/domain/repository/vaccine_repository.dart';

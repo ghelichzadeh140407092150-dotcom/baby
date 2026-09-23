@@ -44,13 +44,12 @@ enum OnboardingConcern {
 
 /// Onboarding step definitions
 enum OnboardingStep {
-  welcome(0, 'خوش‌آمدید'),
-  childInfo(1, 'اطلاعات کودک'),
-  concerns(2, 'اولویت‌ها'),
-  notifications(3, 'اعلان‌ها'),
-  complete(4, 'تکمیل');
+  welcome('خوش‌آمدید'),
+  childInfo('اطلاعات کودک'),
+  concerns('اولویت‌ها'),
+  notifications('اعلان‌ها'),
+  complete('تکمیل');
 
-  const OnboardingStep(this.index, this.title);
-  final int index;
+  const OnboardingStep(this.title);
   final String title;
 }

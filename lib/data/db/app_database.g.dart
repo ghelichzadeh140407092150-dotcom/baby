@@ -3438,6 +3438,15 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $ActivityLogTable activityLog = $ActivityLogTable(this);
   late final $SleepFeedLogTable sleepFeedLog = $SleepFeedLogTable(this);
   late final $AppSettingsTable appSettings = $AppSettingsTable(this);
+  late final ChildDao childDao = ChildDao(this as AppDatabase);
+  late final GrowthDao growthDao = GrowthDao(this as AppDatabase);
+  late final VaccineDao vaccineDao = VaccineDao(this as AppDatabase);
+  late final TeethDao teethDao = TeethDao(this as AppDatabase);
+  late final MilestoneDao milestoneDao = MilestoneDao(this as AppDatabase);
+  late final FoodDao foodDao = FoodDao(this as AppDatabase);
+  late final ActivityDao activityDao = ActivityDao(this as AppDatabase);
+  late final SleepFeedDao sleepFeedDao = SleepFeedDao(this as AppDatabase);
+  late final SettingsDao settingsDao = SettingsDao(this as AppDatabase);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();

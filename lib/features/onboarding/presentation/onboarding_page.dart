@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
+import 'package:hamrah_madaran/core/theme/theme_provider.dart';
 import 'package:hamrah_madaran/core/utils/persian_utils.dart';
 import 'package:hamrah_madaran/features/onboarding/application/onboarding_controller.dart';
 import 'package:hamrah_madaran/features/onboarding/domain/onboarding_state.dart';
@@ -105,9 +106,10 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
 
   void _goToStep(int step) {
     final controller = ref.read(onboardingControllerProvider.notifier);
-    if (step > state.currentStep) {
+    final currentStep = ref.read(onboardingControllerProvider).currentStep;
+    if (step > currentStep) {
       controller.nextStep();
-    } else if (step < state.currentStep) {
+    } else if (step < currentStep) {
       controller.previousStep();
     }
     _pageController.animateToPage(
@@ -118,6 +120,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
   }
 
   void _finishOnboarding() async {
+    final theme = ref.read(appThemeProvider);
     final result = await ref.read(onboardingControllerProvider.notifier).completeOnboarding();
     if (result.isSuccess && mounted) {
       context.go('/today');
