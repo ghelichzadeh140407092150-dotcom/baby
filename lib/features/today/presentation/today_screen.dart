@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hamrah_madaran/core/theme/app_theme.dart';
+import 'package:hamrah_madaran/core/theme/theme_provider.dart';
 import 'package:hamrah_madaran/core/utils/persian_utils.dart';
 import 'package:hamrah_madaran/features/today/application/today_controller.dart';
 import 'package:hamrah_madaran/features/today/presentation/reminder_strip.dart';

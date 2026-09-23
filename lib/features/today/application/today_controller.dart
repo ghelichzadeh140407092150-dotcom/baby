@@ -5,6 +5,7 @@ import 'package:hamrah_madaran/core/error/result.dart';
 import 'package:hamrah_madaran/data/repository/child_repository_impl.dart';
 import 'package:hamrah_madaran/data/repository/vaccine_repository_impl.dart';
 import 'package:hamrah_madaran/data/repository/growth_repository_impl.dart';
+import 'package:hamrah_madaran/core/di/service_locator.dart';
 import 'package:hamrah_madaran/features/today/domain/content.dart';
 import 'package:hamrah_madaran/features/today/domain/content_repository.dart';
 import 'package:hamrah_madaran/features/today/application/daily_pick.dart';
