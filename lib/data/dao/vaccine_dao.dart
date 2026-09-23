@@ -44,7 +44,7 @@ class VaccineDao extends DatabaseAccessor<AppDatabase> with _$VaccineDaoMixin {
       (select(vaccineDoses)..where((d) => d.id.equals(id))).getSingleOrNull();
 
   /// Mark dose as administered
-  Future<bool> markAdministered(String id, DateTime administeredAt) =>
+  Future<int> markAdministered(String id, DateTime administeredAt) =>
       (update(vaccineDoses)..where((d) => d.id.equals(id)))
           .write(VaccineDosesCompanion(
             administeredAt: Value(administeredAt),
@@ -52,7 +52,7 @@ class VaccineDao extends DatabaseAccessor<AppDatabase> with _$VaccineDaoMixin {
           ));
 
   /// Mark dose as skipped
-  Future<bool> markSkipped(String id, {String? note}) =>
+  Future<int> markSkipped(String id, {String? note}) =>
       (update(vaccineDoses)..where((d) => d.id.equals(id)))
           .write(VaccineDosesCompanion(
             skipped: const Value(true),
@@ -60,7 +60,7 @@ class VaccineDao extends DatabaseAccessor<AppDatabase> with _$VaccineDaoMixin {
           ));
 
   /// Update dose note
-  Future<bool> updateNote(String id, String note) =>
+  Future<int> updateNote(String id, String note) =>
       (update(vaccineDoses)..where((d) => d.id.equals(id)))
           .write(VaccineDosesCompanion(note: Value(note)));
 

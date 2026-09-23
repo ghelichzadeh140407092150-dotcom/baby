@@ -33,13 +33,13 @@ class MilestoneDao extends DatabaseAccessor<AppDatabase> with _$MilestoneDaoMixi
           .getSingleOrNull();
 
   /// Mark milestone as achieved
-  Future<bool> markAchieved(String childId, String milestoneCode, DateTime achievedAt) =>
+  Future<int> markAchieved(String childId, String milestoneCode, DateTime achievedAt) =>
       (update(milestones)
         ..where((m) => m.childId.equals(childId) & m.milestoneCode.equals(milestoneCode)))
           .write(MilestonesCompanion(achievedAt: Value(achievedAt)));
 
   /// Unmark milestone
-  Future<bool> unmarkAchieved(String childId, String milestoneCode) =>
+  Future<int> unmarkAchieved(String childId, String milestoneCode) =>
       (update(milestones)
         ..where((m) => m.childId.equals(childId) & m.milestoneCode.equals(milestoneCode)))
           .write(const MilestonesCompanion(achievedAt: Value.absent()));

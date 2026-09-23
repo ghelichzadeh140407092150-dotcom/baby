@@ -31,7 +31,7 @@ class TeethDao extends DatabaseAccessor<AppDatabase> with _$TeethDaoMixin {
   }
 
   /// Update eruption date
-  Future<bool> updateEruptionDate(String childId, String toothCode, DateTime date) =>
+  Future<int> updateEruptionDate(String childId, String toothCode, DateTime date) =>
       (update(teeth)
         ..where((t) => t.childId.equals(childId) & t.toothCode.equals(toothCode)))
           .write(TeethCompanion(eruptedAt: Value(date)));

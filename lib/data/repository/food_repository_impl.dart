@@ -19,7 +19,7 @@ class FoodRepositoryImpl implements FoodRepository {
         childId: introduction.childId,
         foodCode: introduction.foodCode,
         firstTriedAt: introduction.firstTriedAt,
-        reaction: Value(introduction.reaction),
+        reaction: Value(introduction.reaction != null ? db.FoodReaction.values.byName(introduction.reaction!) : null),
         note: Value(introduction.note),
       ));
       return Success(introduction);
@@ -32,7 +32,15 @@ class FoodRepositoryImpl implements FoodRepository {
   Future<Result<List<FoodIntroduction>>> getIntroducedFoods(String childId) async {
     try {
       final foods = await _dao.getFoodsForChild(childId);
-      return Success(foods);
+      final domainFoods = foods.map((f) => FoodIntroduction(
+        id: f.id,
+        childId: f.childId,
+        foodCode: f.foodCode,
+        firstTriedAt: f.firstTriedAt,
+        reaction: f.reaction?.name,
+        note: f.note,
+      )).toList();
+      return Success(domainFoods);
     } catch (e) {
       return Failure(e);
     }
@@ -52,7 +60,16 @@ class FoodRepositoryImpl implements FoodRepository {
   Future<Result<FoodIntroduction?>> getFoodIntroduction(String childId, String foodCode) async {
     try {
       final food = await _dao.getFoodIntroduction(childId, foodCode);
-      return Success(food);
+      if (food == null) return const Success(null);
+      final domainFood = FoodIntroduction(
+        id: food.id,
+        childId: food.childId,
+        foodCode: food.foodCode,
+        firstTriedAt: food.firstTriedAt,
+        reaction: food.reaction?.name,
+        note: food.note,
+      );
+      return Success(domainFood);
     } catch (e) {
       return Failure(e);
     }
@@ -66,7 +83,8 @@ class FoodRepositoryImpl implements FoodRepository {
     {String? note}
   ) async {
     try {
-      await _dao.updateReaction(childId, foodCode, reaction, note: note);
+      final foodReaction = db.FoodReaction.values.byName(reaction);
+      await _dao.updateReaction(childId, foodCode, foodReaction, note: note);
       final food = await _dao.getFoodIntroduction(childId, foodCode);
       if (food == null) return Failure(Exception('Food introduction not found'));
       return Success(food);
@@ -87,7 +105,17 @@ class FoodRepositoryImpl implements FoodRepository {
 
   @override
   Stream<Result<List<FoodIntroduction>>> watchIntroducedFoods(String childId) {
-    return _dao.watchFoodsForChild(childId).map((foods) => Success(foods))
+    return _dao.watchFoodsForChild(childId).map((foods) {
+      final domainFoods = foods.map((f) => FoodIntroduction(
+        id: f.id,
+        childId: f.childId,
+        foodCode: f.foodCode,
+        firstTriedAt: f.firstTriedAt,
+        reaction: f.reaction?.name,
+        note: f.note,
+      )).toList();
+      return Success(domainFoods);
+    })
         .handleError((e) => Failure(e));
   }
 }

@@ -31,7 +31,7 @@ class FoodDao extends DatabaseAccessor<AppDatabase> with _$FoodDaoMixin {
           .getSingleOrNull();
 
   /// Update reaction
-  Future<bool> updateReaction(String childId, String foodCode, FoodReaction? reaction, {String? note}) =>
+  Future<int> updateReaction(String childId, String foodCode, FoodReaction? reaction, {String? note}) =>
       (update(foodIntroductions)
         ..where((f) => f.childId.equals(childId) & f.foodCode.equals(foodCode)))
           .write(FoodIntroductionsCompanion(

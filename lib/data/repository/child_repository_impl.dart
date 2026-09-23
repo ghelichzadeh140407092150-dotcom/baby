@@ -40,7 +40,7 @@ class ChildRepositoryImpl implements ChildRepository {
         name: name,
         birthDate: birthDate,
         isPreBirth: isPreBirth,
-        sex: Value(sex),
+        sex: Value(sex != null ? db.ChildSex.values.byName(sex) : null),
         gestationalWeeksAtBirth: Value(gestationalWeeksAtBirth),
         avatarSeed: avatarSeed,
         createdAt: now,

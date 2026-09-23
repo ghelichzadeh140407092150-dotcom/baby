@@ -103,7 +103,7 @@ final childRepositoryProvider = Provider<ChildRepository>((ref) {
 });
 
 final growthRepositoryProvider = Provider<GrowthRepository>((ref) {
-  return GrowthRepositoryImpl(ref.watch(growthDaoProvider), ref.watch(childDaoProvider));
+  return GrowthRepositoryImpl(ref.watch(growthDaoProvider));
 });
 
 final vaccineRepositoryProvider = Provider<VaccineRepository>((ref) {

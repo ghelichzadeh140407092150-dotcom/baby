@@ -48,7 +48,7 @@ class SleepFeedDao extends DatabaseAccessor<AppDatabase> with _$SleepFeedDaoMixi
           .getSingleOrNull();
 
   /// End a session
-  Future<bool> endSession(String id, DateTime endedAt, {double? quantity}) =>
+  Future<int> endSession(String id, DateTime endedAt, {double? quantity}) =>
       (update(sleepFeedLog)..where((l) => l.id.equals(id)))
           .write(SleepFeedLogCompanion(
             endedAt: Value(endedAt),

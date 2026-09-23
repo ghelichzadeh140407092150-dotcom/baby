@@ -51,7 +51,7 @@ class ActivityDao extends DatabaseAccessor<AppDatabase> with _$ActivityDaoMixin 
   }
 
   /// Toggle favorite
-  Future<bool> toggleFavorite(String id, bool favorited) =>
+  Future<int> toggleFavorite(String id, bool favorited) =>
       (update(activityLog)..where((a) => a.id.equals(id)))
           .write(ActivityLogCompanion(favorited: Value(favorited)));
 

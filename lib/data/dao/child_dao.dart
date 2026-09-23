@@ -12,12 +12,12 @@ class ChildDao extends DatabaseAccessor<AppDatabase> with _$ChildDaoMixin {
   Future<void> insertChild(ChildrenCompanion child) => into(children).insert(child);
 
   /// Get child by ID
-  Future<Child?> getChildById(String id) => 
+  Future<ChildrenData?> getChildById(String id) => 
       (select(children)..where((c) => c.id.equals(id))).getSingleOrNull();
 
   /// Get all children ordered by creation date
-  Future<List<Child>> getAllChildren() => 
-      select(children)..orderBy([(c) => OrderingTerm.desc(c.createdAt)]);
+  Future<List<ChildrenData>> getAllChildren() => 
+      (select(children)..orderBy([(c) => OrderingTerm.desc(c.createdAt)])).get();
 
   /// Update child
   Future<bool> updateChild(ChildrenCompanion child) => 
@@ -28,10 +28,10 @@ class ChildDao extends DatabaseAccessor<AppDatabase> with _$ChildDaoMixin {
       (delete(children)..where((c) => c.id.equals(id))).go();
 
   /// Watch all children as stream
-  Stream<List<Child>> watchAllChildren() => 
-      select(children)..orderBy([(c) => OrderingTerm.desc(c.createdAt)]).watch();
+  Stream<List<ChildrenData>> watchAllChildren() => 
+      (select(children)..orderBy([(c) => OrderingTerm.desc(c.createdAt)])).watch();
 
   /// Watch single child
-  Stream<Child?> watchChild(String id) => 
+  Stream<ChildrenData?> watchChild(String id) => 
       (select(children)..where((c) => c.id.equals(id))).watchSingleOrNull();
 }
