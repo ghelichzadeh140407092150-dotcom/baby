@@ -1,7 +1,7 @@
 // data/repository/activity_repository_impl.dart
 import 'package:drift/drift.dart';
 import 'package:hamrah_madaran/core/error/result.dart';
-import 'package:hamrah_madaran/data/db/app_database.dart';
+import 'package:hamrah_madaran/data/db/app_database.dart' as db;
 import 'package:hamrah_madaran/data/dao/activity_dao.dart';
 import 'package:hamrah_madaran/domain/entity/activity.dart';
 import 'package:hamrah_madaran/domain/repository/activity_repository.dart';
@@ -14,7 +14,7 @@ class ActivityRepositoryImpl implements ActivityRepository {
   @override
   Future<Result<ActivityLog>> logActivity(ActivityLog activity) async {
     try {
-      await _dao.insertActivity(ActivityLogCompanion.insert(
+      await _dao.insertActivity(db.ActivityLogCompanion.insert(
         id: activity.id,
         childId: activity.childId,
         contentId: activity.contentId,

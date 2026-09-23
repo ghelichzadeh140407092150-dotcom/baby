@@ -1,7 +1,7 @@
 // data/repository/child_repository_impl.dart
 import 'package:drift/drift.dart';
 import 'package:hamrah_madaran/core/error/result.dart';
-import 'package:hamrah_madaran/data/db/app_database.dart';
+import 'package:hamrah_madaran/data/db/app_database.dart' as db;
 import 'package:hamrah_madaran/data/dao/child_dao.dart';
 import 'package:hamrah_madaran/domain/entity/child.dart';
 import 'package:hamrah_madaran/domain/repository/child_repository.dart';
@@ -35,7 +35,7 @@ class ChildRepositoryImpl implements ChildRepository {
         updatedAt: now,
       );
       
-      await _dao.insertChild(ChildrenCompanion.insert(
+      await _dao.insertChild(db.ChildrenCompanion.insert(
         id: id,
         name: name,
         birthDate: birthDate,
@@ -77,7 +77,7 @@ class ChildRepositoryImpl implements ChildRepository {
   Future<Result<Child>> updateChild(Child child) async {
     try {
       final updated = child.copyWith(updatedAt: DateTime.now());
-      await _dao.updateChild(ChildrenCompanion(
+      await _dao.updateChild(db.ChildrenCompanion(
         id: Value(updated.id),
         name: Value(updated.name),
         birthDate: Value(updated.birthDate),

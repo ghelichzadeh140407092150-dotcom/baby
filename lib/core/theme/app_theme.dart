@@ -45,7 +45,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   AppTheme copyWith({
     bool? isDark,
     _AppColorTokens? colors,
-    _AppTextStyles? textStyles,
+    AppTextStyles? textStyles,
     _AppSpacing? spacing,
     _AppRadius? radius,
     _AppShadows? shadows,

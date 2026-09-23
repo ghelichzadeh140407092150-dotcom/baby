@@ -1,7 +1,7 @@
 // data/repository/vaccine_repository_impl.dart
 import 'package:drift/drift.dart';
 import 'package:hamrah_madaran/core/error/result.dart';
-import 'package:hamrah_madaran/data/db/app_database.dart';
+import 'package:hamrah_madaran/data/db/app_database.dart' as db;
 import 'package:hamrah_madaran/data/dao/vaccine_dao.dart';
 import 'package:hamrah_madaran/data/dao/child_dao.dart';
 import 'package:hamrah_madaran/domain/entity/vaccine.dart';
@@ -23,14 +23,14 @@ class VaccineRepositoryImpl implements VaccineRepository {
       // In production, this should load from assets/data/iran_vaccines_v2024.json
       final schedule = _getIranVaccineSchedule();
       
-      final doses = <VaccineDosesCompanion>[];
+      final doses = <db.VaccineDosesCompanion>[];
       
       for (final vaccine in schedule) {
         for (final doseInfo in vaccine.doses) {
           final dueDate = birthDate.add(Duration(days: doseInfo.scheduledAgeDays));
           final id = _uuid.v4();
           
-          doses.add(VaccineDosesCompanion.insert(
+          doses.add(db.VaccineDosesCompanion.insert(
             id: id,
             childId: childId,
             vaccineCode: vaccine.vaccineCode,

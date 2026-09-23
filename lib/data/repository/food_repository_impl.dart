@@ -1,7 +1,7 @@
 // data/repository/food_repository_impl.dart
 import 'package:drift/drift.dart';
 import 'package:hamrah_madaran/core/error/result.dart';
-import 'package:hamrah_madaran/data/db/app_database.dart';
+import 'package:hamrah_madaran/data/db/app_database.dart' as db;
 import 'package:hamrah_madaran/data/dao/food_dao.dart';
 import 'package:hamrah_madaran/domain/entity/food.dart';
 import 'package:hamrah_madaran/domain/repository/food_repository.dart';
@@ -14,7 +14,7 @@ class FoodRepositoryImpl implements FoodRepository {
   @override
   Future<Result<FoodIntroduction>> addFoodIntroduction(FoodIntroduction introduction) async {
     try {
-      await _dao.insertFood(FoodIntroductionsCompanion.insert(
+      await _dao.insertFood(db.FoodIntroductionsCompanion.insert(
         id: introduction.id,
         childId: introduction.childId,
         foodCode: introduction.foodCode,

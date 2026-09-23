@@ -1,4 +1,5 @@
 // core/di/service_locator.dart
+import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path_provider/path_provider.dart';
@@ -141,7 +142,7 @@ Future<ProviderContainer> initializeDependencies() async {
   final documentsDir = await getApplicationDocumentsDirectory();
   final dbPath = p.join(documentsDir.path, 'hamrah_madaran.sqlite');
   
-  final database = AppDatabase(NativeDatabase.createInBackground(dbPath));
+  final database = AppDatabase(NativeDatabase(File(dbPath)));
   
   // Run migrations
   await runMigrations(database);
@@ -165,5 +166,5 @@ Future<ProviderContainer> initializeDependencies() async {
 Future<void> runMigrations(AppDatabase database) async {
   // Migration logic will be implemented in data/db/migration.dart
   // For now, just ensure schema is up to date
-  await database.migrator.migrate();
+  await database.customStatement('PRAGMA foreign_keys = ON');
 }

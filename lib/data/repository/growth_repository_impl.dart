@@ -1,7 +1,7 @@
 // data/repository/growth_repository_impl.dart
 import 'package:drift/drift.dart';
 import 'package:hamrah_madaran/core/error/result.dart';
-import 'package:hamrah_madaran/data/db/app_database.dart';
+import 'package:hamrah_madaran/data/db/app_database.dart' as db;
 import 'package:hamrah_madaran/data/dao/growth_dao.dart';
 import 'package:hamrah_madaran/domain/entity/growth.dart';
 import 'package:hamrah_madaran/domain/repository/growth_repository.dart';
@@ -14,7 +14,7 @@ class GrowthRepositoryImpl implements GrowthRepository {
   @override
   Future<Result<GrowthEntry>> addMeasurement(GrowthEntry entry) async {
     try {
-      await _dao.insertEntry(GrowthEntriesCompanion.insert(
+      await _dao.insertEntry(db.GrowthEntriesCompanion.insert(
         id: entry.id,
         childId: entry.childId,
         measuredAt: entry.measuredAt,

@@ -12,6 +12,7 @@ import '../../features/library/presentation/library_screen.dart';
 import '../../features/library/presentation/story_player_screen.dart';
 import '../../features/child/presentation/growth/growth_chart_screen.dart';
 import '../../features/child/presentation/vaccines/vaccine_timeline_screen.dart';
+import '../../features/settings/presentation/dev_gallery_screen.dart';
 import '../../features/child/presentation/teething/teething_screen.dart';
 import '../../features/child/presentation/milestones/milestones_screen.dart';
 import '../../data/dao/settings_dao.dart';
@@ -103,7 +104,7 @@ GoRouter _createRouter(WidgetRef ref, ThemeMode themeMode) {
       ),
     ],
     redirect: (context, state) {
-      final settingsDao = context.read(settingsDaoProvider);
+      final settingsDao = ref.read(settingsDaoProvider);
       final isOnboardingCompleted = settingsDao.getOnboardingCompleted();
       
       // If onboarding not completed and not on onboarding route, redirect to onboarding
