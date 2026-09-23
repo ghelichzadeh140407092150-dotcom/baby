@@ -24,7 +24,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   return _createRouter(ref, themeMode);
 });
 
-GoRouter _createRouter(WidgetRef ref, ThemeMode themeMode) {
+GoRouter _createRouter(Ref ref, ThemeMode themeMode) {
   return GoRouter(
     initialLocation: AppRoutes.today,
     debugLogDiagnostics: true,

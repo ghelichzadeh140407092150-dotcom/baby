@@ -12,14 +12,14 @@ class TeethDao extends DatabaseAccessor<AppDatabase> with _$TeethDaoMixin {
   Future<void> insertTooth(TeethCompanion tooth) => into(teeth).insert(tooth);
 
   /// Get all teeth for a child
-  Future<List<Tooth>> getTeethForChild(String childId) =>
+  Future<List<TeethData>> getTeethForChild(String childId) =>
       (select(teeth)
         ..where((t) => t.childId.equals(childId))
         ..orderBy([(t) => OrderingTerm.asc(t.eruptedAt)]))
           .get();
 
   /// Get a specific tooth
-  Future<Tooth?> getTooth(String childId, String toothCode) =>
+  Future<TeethData?> getTooth(String childId, String toothCode) =>
       (select(teeth)
         ..where((t) => t.childId.equals(childId) & t.toothCode.equals(toothCode)))
           .getSingleOrNull();
@@ -41,7 +41,7 @@ class TeethDao extends DatabaseAccessor<AppDatabase> with _$TeethDaoMixin {
       (delete(teeth)..where((t) => t.childId.equals(childId) & t.toothCode.equals(toothCode))).go();
 
   /// Watch teeth for child
-  Stream<List<Tooth>> watchTeethForChild(String childId) =>
+  Stream<List<TeethData>> watchTeethForChild(String childId) =>
       (select(teeth)
         ..where((t) => t.childId.equals(childId))
         ..orderBy([(t) => OrderingTerm.asc(t.eruptedAt)]))

@@ -4,7 +4,7 @@ import 'app_database.dart';
 
 /// Run database migrations
 Future<void> runMigrations(AppDatabase database) async {
-  await database.migrator.migrate();
+  await database.customStatement('PRAGMA foreign_keys = ON');
 }
 
 /// Migration helper for future schema versions
