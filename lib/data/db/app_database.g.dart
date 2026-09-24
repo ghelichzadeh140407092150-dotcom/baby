@@ -545,14 +545,13 @@ class $GrowthEntriesTable extends GrowthEntries
   late final GeneratedColumn<String> note = GeneratedColumn<String>(
       'note', aliasedName, true,
       type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _sourceMeta = const VerificationMeta('source');
   @override
-  late final GeneratedColumnWithTypeConverter<MeasurementSource, String>
-      source = GeneratedColumn<String>('source', aliasedName, false,
-              type: DriftSqlType.string,
-              requiredDuringInsert: false,
-              defaultValue: const Constant(MeasurementSource.manual))
-          .withConverter<MeasurementSource>(
-              $GrowthEntriesTable.$convertersource);
+  late final GeneratedColumn<String> source = GeneratedColumn<String>(
+      'source', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant('manual'));
   static const VerificationMeta _createdAtMeta =
       const VerificationMeta('createdAt');
   @override
@@ -618,6 +617,10 @@ class $GrowthEntriesTable extends GrowthEntries
       context.handle(
           _noteMeta, note.isAcceptableOrUnknown(data['note']!, _noteMeta));
     }
+    if (data.containsKey('source')) {
+      context.handle(_sourceMeta,
+          source.isAcceptableOrUnknown(data['source']!, _sourceMeta));
+    }
     if (data.containsKey('created_at')) {
       context.handle(_createdAtMeta,
           createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta));
@@ -647,9 +650,8 @@ class $GrowthEntriesTable extends GrowthEntries
           DriftSqlType.double, data['${effectivePrefix}head_circumference_cm']),
       note: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}note']),
-      source: $GrowthEntriesTable.$convertersource.fromSql(attachedDatabase
-          .typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}source'])!),
+      source: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}source'])!,
       createdAt: attachedDatabase.typeMapping
           .read(DriftSqlType.dateTime, data['${effectivePrefix}created_at'])!,
     );
@@ -659,10 +661,6 @@ class $GrowthEntriesTable extends GrowthEntries
   $GrowthEntriesTable createAlias(String alias) {
     return $GrowthEntriesTable(attachedDatabase, alias);
   }
-
-  static JsonTypeConverter2<MeasurementSource, String, String>
-      $convertersource =
-      const EnumNameConverter<MeasurementSource>(MeasurementSource.values);
 }
 
 class GrowthEntry extends DataClass implements Insertable<GrowthEntry> {
@@ -673,7 +671,7 @@ class GrowthEntry extends DataClass implements Insertable<GrowthEntry> {
   final double? weightKg;
   final double? headCircumferenceCm;
   final String? note;
-  final MeasurementSource source;
+  final String source;
   final DateTime createdAt;
   const GrowthEntry(
       {required this.id,
@@ -703,10 +701,7 @@ class GrowthEntry extends DataClass implements Insertable<GrowthEntry> {
     if (!nullToAbsent || note != null) {
       map['note'] = Variable<String>(note);
     }
-    {
-      map['source'] =
-          Variable<String>($GrowthEntriesTable.$convertersource.toSql(source));
-    }
+    map['source'] = Variable<String>(source);
     map['created_at'] = Variable<DateTime>(createdAt);
     return map;
   }
@@ -743,8 +738,7 @@ class GrowthEntry extends DataClass implements Insertable<GrowthEntry> {
       headCircumferenceCm:
           serializer.fromJson<double?>(json['headCircumferenceCm']),
       note: serializer.fromJson<String?>(json['note']),
-      source: $GrowthEntriesTable.$convertersource
-          .fromJson(serializer.fromJson<String>(json['source'])),
+      source: serializer.fromJson<String>(json['source']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
     );
   }
@@ -759,8 +753,7 @@ class GrowthEntry extends DataClass implements Insertable<GrowthEntry> {
       'weightKg': serializer.toJson<double?>(weightKg),
       'headCircumferenceCm': serializer.toJson<double?>(headCircumferenceCm),
       'note': serializer.toJson<String?>(note),
-      'source': serializer
-          .toJson<String>($GrowthEntriesTable.$convertersource.toJson(source)),
+      'source': serializer.toJson<String>(source),
       'createdAt': serializer.toJson<DateTime>(createdAt),
     };
   }
@@ -773,7 +766,7 @@ class GrowthEntry extends DataClass implements Insertable<GrowthEntry> {
           Value<double?> weightKg = const Value.absent(),
           Value<double?> headCircumferenceCm = const Value.absent(),
           Value<String?> note = const Value.absent(),
-          MeasurementSource? source,
+          String? source,
           DateTime? createdAt}) =>
       GrowthEntry(
         id: id ?? this.id,
@@ -847,7 +840,7 @@ class GrowthEntriesCompanion extends UpdateCompanion<GrowthEntry> {
   final Value<double?> weightKg;
   final Value<double?> headCircumferenceCm;
   final Value<String?> note;
-  final Value<MeasurementSource> source;
+  final Value<String> source;
   final Value<DateTime> createdAt;
   final Value<int> rowid;
   const GrowthEntriesCompanion({
@@ -912,7 +905,7 @@ class GrowthEntriesCompanion extends UpdateCompanion<GrowthEntry> {
       Value<double?>? weightKg,
       Value<double?>? headCircumferenceCm,
       Value<String?>? note,
-      Value<MeasurementSource>? source,
+      Value<String>? source,
       Value<DateTime>? createdAt,
       Value<int>? rowid}) {
     return GrowthEntriesCompanion(
@@ -955,8 +948,7 @@ class GrowthEntriesCompanion extends UpdateCompanion<GrowthEntry> {
       map['note'] = Variable<String>(note.value);
     }
     if (source.present) {
-      map['source'] = Variable<String>(
-          $GrowthEntriesTable.$convertersource.toSql(source.value));
+      map['source'] = Variable<String>(source.value);
     }
     if (createdAt.present) {
       map['created_at'] = Variable<DateTime>(createdAt.value);
@@ -4291,7 +4283,7 @@ typedef $$GrowthEntriesTableCreateCompanionBuilder = GrowthEntriesCompanion
   Value<double?> weightKg,
   Value<double?> headCircumferenceCm,
   Value<String?> note,
-  Value<MeasurementSource> source,
+  Value<String> source,
   required DateTime createdAt,
   Value<int> rowid,
 });
@@ -4304,7 +4296,7 @@ typedef $$GrowthEntriesTableUpdateCompanionBuilder = GrowthEntriesCompanion
   Value<double?> weightKg,
   Value<double?> headCircumferenceCm,
   Value<String?> note,
-  Value<MeasurementSource> source,
+  Value<String> source,
   Value<DateTime> createdAt,
   Value<int> rowid,
 });
@@ -4358,10 +4350,8 @@ class $$GrowthEntriesTableFilterComposer
   ColumnFilters<String> get note => $composableBuilder(
       column: $table.note, builder: (column) => ColumnFilters(column));
 
-  ColumnWithTypeConverterFilters<MeasurementSource, MeasurementSource, String>
-      get source => $composableBuilder(
-          column: $table.source,
-          builder: (column) => ColumnWithTypeConverterFilters(column));
+  ColumnFilters<String> get source => $composableBuilder(
+      column: $table.source, builder: (column) => ColumnFilters(column));
 
   ColumnFilters<DateTime> get createdAt => $composableBuilder(
       column: $table.createdAt, builder: (column) => ColumnFilters(column));
@@ -4469,7 +4459,7 @@ class $$GrowthEntriesTableAnnotationComposer
   GeneratedColumn<String> get note =>
       $composableBuilder(column: $table.note, builder: (column) => column);
 
-  GeneratedColumnWithTypeConverter<MeasurementSource, String> get source =>
+  GeneratedColumn<String> get source =>
       $composableBuilder(column: $table.source, builder: (column) => column);
 
   GeneratedColumn<DateTime> get createdAt =>
@@ -4526,7 +4516,7 @@ class $$GrowthEntriesTableTableManager extends RootTableManager<
             Value<double?> weightKg = const Value.absent(),
             Value<double?> headCircumferenceCm = const Value.absent(),
             Value<String?> note = const Value.absent(),
-            Value<MeasurementSource> source = const Value.absent(),
+            Value<String> source = const Value.absent(),
             Value<DateTime> createdAt = const Value.absent(),
             Value<int> rowid = const Value.absent(),
           }) =>
@@ -4550,7 +4540,7 @@ class $$GrowthEntriesTableTableManager extends RootTableManager<
             Value<double?> weightKg = const Value.absent(),
             Value<double?> headCircumferenceCm = const Value.absent(),
             Value<String?> note = const Value.absent(),
-            Value<MeasurementSource> source = const Value.absent(),
+            Value<String> source = const Value.absent(),
             required DateTime createdAt,
             Value<int> rowid = const Value.absent(),
           }) =>

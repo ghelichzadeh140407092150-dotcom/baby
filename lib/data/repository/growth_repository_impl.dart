@@ -22,10 +22,10 @@ class GrowthRepositoryImpl implements GrowthRepository {
         weightKg: Value(entry.weightKg),
         headCircumferenceCm: Value(entry.headCircumferenceCm),
         note: Value(entry.note),
-        source: Value(entry.source != null ? db.MeasurementSource.values.byName(entry.source!) : db.MeasurementSource.manual),
+        source: Value(entry.source),
         createdAt: entry.createdAt,
       ));
-      return Success(entry as GrowthEntry);
+      return Success(entry);
     } catch (e) {
       return Failure(e);
     }
@@ -98,7 +98,7 @@ class GrowthRepositoryImpl implements GrowthRepository {
           weightKg: e.weightKg,
           headCircumferenceCm: e.headCircumferenceCm,
           note: e.note,
-          source: e.source.name,
+          source: e.source,
           createdAt: e.createdAt,
         )).toList()))
         .handleError((e) => Failure(e));
